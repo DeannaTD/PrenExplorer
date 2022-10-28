@@ -24,12 +24,12 @@ namespace PrenExplorer.Controllers
 
         public IActionResult Index()
         {
-            //return View("Error");
-            if (User.IsInRole("dev")) return View();
-            if (User.IsInRole("Manager")) return RedirectToAction("Index", "Manager");
-            if (User.IsInRole("Mentor")) return RedirectToAction("Index", "Mentor");
-            if (User.IsInRole("Student")) return RedirectToAction("Index", "Student");
-            else return View();
+            if (User.IsInRole("Student")) return View("Error");
+            return View();
+            //if (User.IsInRole("Manager")) return RedirectToAction("Index", "Manager");
+            //if (User.IsInRole("Mentor")) return RedirectToAction("Index", "Mentor");
+            
+            //else return View();
         }
 
         public IActionResult Privacy()

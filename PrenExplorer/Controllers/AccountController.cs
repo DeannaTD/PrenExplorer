@@ -44,8 +44,6 @@ namespace PrenExplorer.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
-            //ModelState.AddModelError("", "В данный момент вход невозможен. Попробуйте позже");
-            //return RedirectToAction("Index", "Home");
             if (ModelState.IsValid)
             {
                 var result = await _service.SignPassword(model);
@@ -57,10 +55,6 @@ namespace PrenExplorer.Controllers
                     }
                     else
                     {
-                        StreamWriter sw = new StreamWriter(Path.Combine(_webHost.WebRootPath, "img/lilog.txt"), true);
-                        string udata = DateTime.UtcNow.ToString("G") + " - " + model.Login;
-                        sw.WriteLine(udata);
-                        sw.Close();
                         return RedirectToAction("Index", "Home");
                     }
                 }

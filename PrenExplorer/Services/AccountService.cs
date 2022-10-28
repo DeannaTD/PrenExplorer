@@ -15,23 +15,12 @@ namespace PrenExplorer.Services
     public class AccountService
     {
         private UserManager<NPUser> _userManager;
-        private RoleManager<IdentityRole> _roleManager;
         private SignInManager<NPUser> _signInManager;
-        private IHttpContextAccessor _contextAccessor;
-        private UnitOfWork _unitOfWork;
 
-        public AccountService(UserManager<NPUser> userManager, RoleManager<IdentityRole> roleManager, SignInManager<NPUser> signInManager, IHttpContextAccessor contextAccessor, UnitOfWork unitOfWork)
+        public AccountService(UserManager<NPUser> userManager, SignInManager<NPUser> signInManager)
         {
             _userManager = userManager;
-            _roleManager = roleManager;
             _signInManager = signInManager;
-            _contextAccessor = contextAccessor;
-            _unitOfWork = unitOfWork;
-        }
-
-        private async Task<IdentityResult> AssingToRole(NPUser user, string Role)
-        {
-            return await _userManager.AddToRoleAsync(user, Role);
         }
 
         public async Task<Microsoft.AspNetCore.Identity.SignInResult> SignPassword(LoginViewModel model)

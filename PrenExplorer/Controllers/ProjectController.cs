@@ -51,6 +51,14 @@ namespace PrenExplorer.Controllers
 
             return PartialView(levels);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllProjectsInfo()
+        {
+            List<Level> levels = await _levelService.GetCollectionAsync();
+            return PartialView("AllProjectsInfo", levels);
+        }
+
         public IActionResult Index()
         {
             return View();

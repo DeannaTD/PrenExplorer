@@ -1,45 +1,148 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-@if (User.Identity.IsAuthenticated)
-{
-<p>@User.Identity.Name</p>
-<a asp-action="AllAtendanceTest" asp-controller="Attendance">Посещения тест</a>
-<a asp-action="GetDuplicatedUsers" asp-controller="Account">Дубликаты</a>
-
-<form method="post" asp-controller="Account" asp-action="Logout">
-    <input type="submit" value="Выход" />
-</form>
-
-<a asp-action="Settings" asp-controller="Account">Настройки</a>
-}
-
-<a asp-action="DeleteAttendances"></a>
-<a asp-action="CreateLevel" asp-controller="Project">Создать уровень</a>
-
-<a asp-action="Register" asp-controller="Account">Регистрация</a>
-<a asp-action="Login" asp-controller="Account">Войти</a>
-<a asp-action="InitializeRoles" asp-controller="Account">Добавить роли</a>
-<a asp-action="CreateHelpers" asp-controller="Home">Добавить статусы</a>
-<a asp-action="Create" asp-controller="Branch">Добавить филиал</a>
-<a asp-action="Index" asp-controller="Branch">Вывести все филиалы</a>
-<br />
-<a asp-action="Index" asp-controller="Payment">Оплата</a>
-<br />
-<br />
-<br />
-<a asp-action="AttendanceMenu" asp-controller="Mentor">Учитель Посещения</a>
-<br />
-<a asp-action="StudentsMenu" asp-controller="Mentor">Учитель Урок</a>
-
-<br />
-<br />
-<a asp-action="UserInfo" asp-controller="Account">Инфо</a>
-<a asp-action="DeleteUser" asp-controller="Account">Удалить</a>
-<a asp-action="ResetPasswordDebug" asp-controller="Account">Удалить</a>
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+﻿@*<div class="lesson_container">
+    <div id="lesson_detail" data-project="@ViewBag.ProjectLink"></div>
 </div>
 
+<script>
+    $(document).ready(() => {
+        let path = $('#lesson_detail').attr("data-project");
+        $("#lesson_detail").load(path);
+    });
+</script>*@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #eaeaea;
+            font-size: 1em;
+        }
+
+        body{
+            background-color: #1a1a1a;
+        }
+
+        aside{
+            outline: 1px solid #aaa;
+            height: 100vh;
+            width: 25vw;
+            display: grid;
+            grid-template-rows: 4em 1fr 7vw;
+        }
+
+        .item{
+            width: 100%;
+            background-color: #1a1a1a;
+            text-align: center;
+            padding: 1rem 0;
+            border: 1px solid #aaa;
+            cursor: pointer;
+        }
+
+        .item:hover{
+            background-color: #333;
+        }
+
+        .info-box{
+            padding-top: 1rem;
+            padding-left: .5rem;
+            overflow-y: scroll;
+        }
+
+        .info-box ul,
+        .info-box ol{
+            padding-left: 2rem;
+        }
+
+        .info-box::-webkit-scrollbar{
+            background: linear-gradient(to top, #1a1a1a, #333);
+            width: 10px;
+        }
+
+        .info-box::-webkit-scrollbar-thumb{
+            background-color: #333;
+        }
+
+        .account-box{
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            width: 25vw;
+            background-color: #1a1a1a;
+            z-index: 999;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        a:hover{
+            text-decoration: underline;
+        }
+
+        .avatar{
+            width: 5vw;
+            border-radius: 50%;
+        }
+
+        .bold{
+            font-weight: 700;
+            padding: 1rem;
+        }
+
+        .wide-list li:not(:first-child){
+            padding-top: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+    <aside>
+        <div class="item">
+                <a href="@Url.Action("GetAllProjectsInfo", "Project")"
+                    data-ajax="true" data-ajax-update="#info-box" data-ajax-mode="replace">
+                    Создать уровень
+                </a>
+        </div>
+        <div class="info-box">
+            <p>Информация:</p>
+            <div id="info-box"></div>
+        </div>
+        <div class="account-box">
+            <img src="/img/avatar.png" alt="profile_picture" class="avatar">
+            <div>
+                <p>Зафод Библброкс</p>
+                <a href="">Выход</a>
+            </div>
+        </div>
+    </aside>
+    <a style="visibility: hidden" href="@Url.Action("GetAllProjectsInfo", "Project")"
+    data-ajax="true" data-ajax-update="#info-box" data-ajax-mode="replace" id="tr">
+        Создать уровень
+    </a>
+    
+    <script>
+        $(window).on('load', () => {
+            $('#tr').trigger('click');
+        });
+    </script>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/jquery-ajax-unobtrusive/dist/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>
