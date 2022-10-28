@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Новое Поколение</title>
+    <title>@ViewData["Title"] - Менеджер проектов</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/style.css" />
     <link rel="stylesheet" href="~/css/site.css" />
@@ -15,7 +15,7 @@
         if (!User.Identity.IsAuthenticated) Context.Response.Redirect(Url.Action("SessionExpired", "Account"));
     }
     <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main">
             @RenderBody()
         </main>
     </div>

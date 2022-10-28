@@ -51,20 +51,10 @@ namespace PrenExplorer
             //    .AddTokenProvider
 
             services.AddTransient<UnitOfWork>();
-            services.AddTransient<LeadService>();
             services.AddTransient<AccountService>();
-            services.AddTransient<BranchService>();
-            services.AddTransient<GroupService>();
-            services.AddTransient<TimeTableService>();
-            services.AddTransient<StudentService>();
-            services.AddTransient<AttendanceService>();
-            services.AddTransient<PaymentService>();
-            services.AddTransient<PaymentPeriodService>();
             services.AddTransient<ProjectService>();
             services.AddTransient<LevelService>();
             services.AddTransient<UserProjectService>();
-            services.AddTransient<CommentService>();
-            services.AddTransient<StatusHistoryService>();
             services.AddControllersWithViews();
         }
 

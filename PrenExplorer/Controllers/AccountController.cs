@@ -79,14 +79,6 @@ namespace PrenExplorer.Controllers
         }
         #endregion
 
-        [HttpGet]
-
-        public async Task<string> GetUserFullName(string id)
-        {
-            NPUser user = await _service.GetUserByIdAsync(id);
-            return user.FirstName + " " + user.Lastname;
-        }
-        
         public IActionResult SessionExpired()
         {
             return View("LoginError");
