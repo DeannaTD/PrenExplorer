@@ -1,0 +1,55 @@
+<section class="project-container">
+    <div class="project-container__logo">
+        <img src="" alt="Logo" srcset="">
+    </div>
+    
+    <p class="project-name">Урок 21. Аргументы vs Параметры. Пакеты. Установка сторонних модулей.</p>
+    <div class="description-block">
+	    <article class="description-block__text">
+              <p><b>АРГУМЕНТЫ VS ПАРАМЕТРЫ</b></p>
+              <p>При работе с функциями мы часто путаем аргументы с параметрами. Разница заключается вот в чем:</p>
+              <p>Когда конструируем функцию, мы закладываем в ней параметры.</p>
+              <p>Когда используем функцию, т.е. вызываем ее, мы передаем в нее аргументы.</p>
+              <img class="project_image" src="../projects/python_image/project21_1.png">
+              <p><b>ПАКЕТЫ</b></p>
+              <p></p>
+              <p>Пакет (package) в Python -- это папка, в которой содержатся другие папки, модули, и в обязательном порядке файл __init__.py.</p>
+              <p>Пакеты необходимы для формирования пространства имён (namespace). Пространство имён -- это группа модулей, объединенных одним именем. Пакеты удобны тем, что они позволяют нам избежать проблем, которые могут возникнуть при наличии модулей с одинаковыми названиями.</p>
+              <p></p>
+              <p>Для наглядности я создал <a href="https://drive.google.com/file/d/1TRS0Ju88i2bDQqgX7VfhETbuM_tIAPNZ/view?usp=sharing">небольшой пакет</a>, который имеет следующую структуру:</p>
+              <p>├── currency</p>
+              <p>│   ├── currency_converter.py</p>
+              <p>│   └── __init__.py</p>
+              <p>├── __init__.py</p>
+              <p>└── temperature</p>
+              <p>&emsp;   ├── __init__.py</p>
+              <p>&emsp;    └── temperature_converter.py</p>
+              <p>Т.е. файл __init__.py, папки currency и temperature. Каждая из папок содержит файлы __init__.py, currency_converter.py, __init__.py, temperature_converter.py соответственно.</p>
+              <p></p>
+              <p>Для того, чтобы попробовать поработать с данным модулем, давайте распакуем скачанный архив и распакуем его, и рядом с папкой converter (не внутри нее) создадим файл conv.py и наберем следующий код:</p>
+              <p>from converter.currency.currency_converter import (</p>
+              <p>&emsp;    from_kgs_to_usd as kgs_usd,</p>
+              <p>&emsp;    from_usd_to_kgs as usd_kgs</p>
+              <p>)</p>
+              <p>from converter.temperature.temperature_converter import from_fahrenheit_to_celsius as f_to_c</p>
+              <p></p>
+              <p>kgs_4700_to_usd = kgs_usd(4700)</p>
+              <p>print(kgs_4700_to_usd)</p>
+              <p></p>
+              <p>usd_30_to_som = usd_kgs(30)</p>
+              <p>print(usd_30_to_som)</p>
+              <p></p>
+              <p>fahr_to_celsius = f_to_c(120)</p>
+              <p>print(fahr_to_celsius)</p>
+              <p></p>
+              <p>В данном коде мы импортировали функции from_kgs_to_usd и from_usd_to_kgs из модуля currency_converter, который находился внутри пакета currency, который в свою очередь находится внутри пакета converter. Но вместо настоящих названий функций, мы использовали псевдонимы kgs_usd и usd_kgs (чтобы было короче). Аналогично импортировали from_fahrenheit_to_celsius в качестве f_to_c.</p>
+              <p></p>
+              <p><b>Задачи:</b></p>
+              <p>Создайте пакет calc, состоящий из модулей square.py и cube.py. В них должны быть функции calculate_square (принимает число, возвращает его квадрат) и calculate_cube (принимает число, возвращает его куб), соответственно.</p>
+
+          </article>
+        <div class="description-block__image">
+            <img src="" alt="" srcset="">
+        </div>
+    </div>
+</section>

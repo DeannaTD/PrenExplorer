@@ -1,0 +1,177 @@
+<!-- <link rel="stylesheet" href="../css/lesson.css"> -->
+<section class="project-container new-project">
+	<div class="project-container__logo">
+		<img src="../projects/img/logos/html-logo.png" alt="Logo" class="project-logo">
+		<!-- <img src="../img/logos/html-logo.png" alt="Logo" class="project-logo"> -->
+	</div>
+
+	<p class="project-name">
+		Формы
+	</p>
+	<div class="description-block">
+		<article class="description-block__text">
+			<p class="theme-2">Основные элементы</p>
+			<p>Форма – инструмент, предназначенный для обмена данными между пользователем и сервером.</p>
+			<div class="code_container">
+				<ol class='code_list'>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<ul class="list_nontype">
+					<li>&lt;<span class="tag-name">form</span>&gt;</li>
+					<li>&lt;<span class="tag-name">label</span>&gt;Ключевое слово&lt;/<span
+							class="tag-name">label</span>&gt;</li>
+					<li>&lt;<span class="tag-name">input</span> <span class='attribute-name'>type</span>=<span
+							class='attribute-value'>"значение"</span> <span class='attribute-name'>name</span>=<span
+							class='attribute-value'>"имя"</span> <span class='attribute-name'>placeholder</span>=<span
+							class='attribute-value'>"подсказка"</span>&gt;</li>
+					<li>&lt;/<span class="tag-name">form</span>&gt;</li>
+				</ul>
+			</div>
+			<p>Тег <span class="code-inline">&lt;<span class="tag-name">form</span>&gt;</span> устанавливает форму на
+				веб-странице. </p>
+			<p>Перед отправкой данных браузер подготавливает информацию в виде пары "имя=значение", где имя определяется
+				атрибутом <span class="code-inline"><span class="attribute-name">name</span></span> тега <span
+					class="code-inline">&lt;<span class="tag-name">input</span>&gt;</span> или другим тегом, допустимым
+				в форме, а значение введено пользователем
+				или установлено в поле формы по умолчанию.</p>
+			<p>Значение вводится в зависимости от того, какая форма требуется:</p>
+			<ul>
+				<li><span class="code-inline"><span class='attribute-name'>type</span> = <span
+							class='attribute-value'>"text"</span></span> – текстовое поле </li>
+				<li><span class="code-inline"><span class='attribute-name'>type</span> = <span
+							class='attribute-value'>"radio"</span></span> – поле с переключателями</li>
+				<li><span class="code-inline"><span class='attribute-name'>type</span> = <span
+							class='attribute-value'>"checkbox"</span></span> – поле с флажками</li>
+				<li><span class="code-inline"><span class='attribute-name'>type</span> = <span
+							class='attribute-value'>"password"</span></span> - поле пароля</li>
+				<li><span class="code-inline"><span class='attribute-name'>type</span> = <span
+							class='attribute-value'>"submit"</span></span> – кнопка отправки</li>
+				<li><span class="code-inline"><span class='attribute-name'>type</span> = <span
+							class='attribute-value'>"reset"</span></span> - кнопка для сброса данных формы</li>
+				<li><span class="code-inline"><span class='attribute-name'>type</span> = <span
+							class='attribute-value'>"number"</span></span> – цифровое поле</li>
+				<li><span class="code-inline"><span class='attribute-name'>type</span> = <span
+							class='attribute-value'>"email"</span></span> – email — поле</li>
+				<li><span class="code-inline"><span class='attribute-name'>type</span> = <span
+							class='attribute-value'>"file"</span></span> - поле которое позволяет выбирать файл с
+					компьютера и загрузить его в форму </li>
+				<li><span class="code-inline"><span class='attribute-name'>type</span> = <span
+							class='attribute-value'>"date"</span></span> - поле которое позволяет вставлять дату в нашу
+					форму </li>
+			</ul>
+			<p>Например, следует реализовать форму: </p>
+			<div class="code_container">
+				<ol class='code_list'>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<ul class="list_nontype">
+					<li>&lt;<span class="tag-name">form</span>&gt;</li>
+					<li>&lt;<span class="tag-name">label</span>&gt;Укажите имя&lt;/<span
+							class="tag-name">label</span>&gt;</li>
+					<li>&lt;<span class="tag-name">input</span> <span class='attribute-name'>type</span>=<span
+							class='attribute-value'>"text"</span> <span class='attribute-name'>name</span>=<span
+							class='attribute-value'>"name"</span>&gt;</li>
+					<li>&lt;<span class="tag-name">label</span>&gt;Введите пароль&lt;/<span
+							class="tag-name">label</span>&gt;</li>
+					<li>&lt;<span class="tag-name">input</span> <span class='attribute-name'>type</span>=<span
+							class='attribute-value'>"password"</span> <span class='attribute-name'>name</span>=<span
+							class='attribute-value'>"pass"</span>&gt;</li>
+					<li>&lt;/<span class="tag-name">form</span>&gt;</li>
+				</ul>
+			</div>
+			<p class="task"><span class="danger_underlined">Задание 1:</span> Реализовать форму, используя все
+				вышеуказанные типы.</p>
+			<img src="../projects/img/html/html_9_1.png" alt="">
+
+			<p class="theme-2">Нестандартные формы</p>
+
+			<p>Select – выпадающее меню.</p>
+			<p>Если количество вариантов для выбора занимает слишком много места, вы можете воспользоваться выпадающими
+				меню <span class="code-inline">&lt;<span class="tag-name">select</span>&gt;</span>.</p>
+			<div class="code_container">
+				<ol class="code_list">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<ul class="list_nontype">
+					<li>&lt;<span class="tag-name">select</span>&gt;</li>
+					<li>&lt;<span class="tag-name">option</span>&gt;Значение1&lt;/<code class="tag-name">option</code>&gt;</li>
+					<li>&lt;<span class="tag-name">option</span>&gt;Значение2&lt;/<code class="tag-name">option</code>&gt;</li>
+					<li>&lt;/<span class="tag-name">select</span>&gt;</li>
+				</ul>
+			</div>
+
+			<p>Textarea – многострочный текст. Может быть изменён размер поля.</p>
+			<div class="code_container">
+				<ol class="code_list">
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<ul class="list_nontype">
+					<li>&lt;<code class="tag-name">textarea</code>&gt;</li>
+					<li>…</li>
+					<li>&lt;/<code class="tag-name">textarea</code>&gt;</li>
+				</ul>
+			</div>
+			<p>Fieldset - предназначен для группировки элементов формы. Это облегчает работу с формами,
+				содержащими большое количество данных. Например, один блок может быть предназначен для ввода текстовой
+				информации, а другой — для флажков.</p>
+			<div class="code_container">
+				<ol class="code_list">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<ul class="list_nontype">
+					<li>&lt;<code class="tag-name">form</code>&gt;</li>
+					<li>
+						<ul class="list_nontype">
+							<li>&lt;<code class="tag-name">fieldset</code>&gt;</li>
+							<li>&lt;<code class="tag-name">legend</code>&gt; Ключевое слово&lt;/<code class="tag-name">legend</code>&gt;</li>
+							<li>&lt;<code class="tag-name">input</code> ……&gt;</li>
+							<li>&lt;/<code class="tag-name">fieldset</code>&gt;</li>
+						</ul>
+					</li>
+					<li>&lt;/<code class="tag-name">form</code>&gt;</li>
+				</ul>
+			</div>
+			<p>&lt;<code class="tag-name">button</code>&gt; - создает кнопку на вашей веб-странице у него есть также атрибут type. Кнопка также
+				отправляет данные на сервер из формы. По своей работе схож с input у которого тип submit и reset.
+				Отличие в том, что кнопку лучше поддается стилизации с помощью css.</p>
+			<div class="code_container">
+				<ol class="code_list">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<ul class="list_nontype">
+					<li>&lt;<span class="tag-name">form</span>&gt;</li>
+					<li>&lt;<span class="tag-name">button</span> <span class='attribute-name'>type</span>=<span class='attribute-value'>"submit"</span>&gt;текст кнопки&lt;/<span class="tag-name">button</span>&gt;</li>
+					<li>&lt;<span class="tag-name">button</span> <span class='attribute-name'>type</span>=<span class='attribute-value'>"reset"</span>&gt;текст кнопки&lt;/<span class="tag-name">button</span>&gt;</li>
+					<li>&lt;/<span class="tag-name">form</span>&gt;</li>
+				</ul>
+			</div>
+			<p class="task"><span class="danger_underlined">Задание 2:</span> Повторить по образцу </p>
+			<img src="../projects/img/html/html_9_2.png" alt="" srcset="">
+			<p><span class="danger_underlined">Задание 3:</span> Повторить по образцу </p>
+			<img src="../projects/img/html/html_9_3.png" alt="" srcset="">
+			<p><span class="danger_underlined">Задание 4:</span> Повторить по образцу </p>
+			<img src="../projects/img/html/html_9_4.png" alt="" srcset="">
+		</article>
+	</div>
+</section>

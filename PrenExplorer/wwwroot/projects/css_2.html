@@ -1,0 +1,175 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../projects/projectStyle.css">
+	</head>
+<body>
+<!--<img src="../projects/images/html_2_1" alt="">-->
+<section class="project-container">
+	<div class="project-container__logo">
+		<img src="../projects/images/CSS-Logo.png" alt="Logo" srcset="" style="max-width: 200px">
+	</div>
+	
+	<p class="project-name">
+		Свойства о работе с текстом в CSS
+	</p>
+	<div class="description-block">
+		<article class="description-block__text">
+			<div class="logos">
+				<!-- <img class="app" src="../projects/images/AppInventor-Logo.png" alt=""> -->
+			</div>
+			
+			<p>Жирность текста:</p>
+			<div class="code_container">
+				<ol class="list_nontype">
+					<li><span class='styles italic'>font-weight</span>: <span class='styles'>bold</span>; <span
+							class="comment">//жирный текст</span></li>
+					<li><span class='styles italic'>font-weight</span>: <span class='styles'>normal</span>; <span
+							class="comment">//обычный текст</span></li>
+				</ol>
+			</div>
+
+			<p>Курсивный текст:</p>
+			<div class="code_container">
+				<ol class="list_nontype">
+					<li><span class='styles italic'>font-style</span>: <span class='styles'>italic</span>; <span
+							class="comment">//курсивный текст</span></li>
+					<li><span class='styles italic'>font-style</span>: <span class='styles'>normal</span>; <span
+							class="comment">//обычный текст</span></li>
+				</ol>
+			</div>
+
+			<p>Размер шрифта:</p>
+			<div class="code_container">
+				<ol class="list_nontype">
+					<li><span class='styles italic'>font-size</span>: <span class='styles'>30px</span>;</li>
+				</ol>
+			</div>
+
+			<p>Расстояние между строк:</p>
+			<div class="code_container">
+				<ol class="list_nontype">
+					<li><span class='styles italic'>line-height</span>: <span class='styles'>10px</span>;</li>
+				</ol>
+			</div>
+
+			<p>Красная строка:</p>
+			<div class="code_container">
+				<ol class="list_nontype">
+					<li><span class='styles italic'>text-indent</span>: <span class='styles'>30px</span>;</li>
+				</ol>
+			</div>
+
+			<p>Подчеркивание текста:</p>
+			<div class="code_container">
+				<ol class="list_nontype plain">
+					<li><span class='styles italic'>text-decoration</span>: <span class='styles'>underline</span>; <span
+							class="comment">//подчеркивает текст</span></li>
+					<li><span class='styles italic'>text-decoration</span>: <span class='styles'>overline</span>; <span
+							class="comment">//подчеркивает текст сверху</span></li>
+					<li><span class='styles italic'>text-decoration</span>: <span class='styles'>line-through</span>;
+						<span class="comment">//перечеркивает текст</span></li>
+					<li><span class='styles italic'>text-decoration</span>: <span class='styles'>none</span>; <span
+							class="comment">//убирает подчеркивание</span></li>
+				</ol>
+			</div>
+
+			<p>Вертикальное выравнивание: </p>
+			<div class="code_container">
+				<ol class="list_nontype plain">
+					<li><span class="styles italic">vertical-align</span>: <span class='styles'>top</span>; <span
+							class="comment">//выравнивание элемента по верху</span></li>
+					<li><span class="styles italic">vertical-align</span>: <span class='styles'>bottom</span>; <span
+							class="comment">//выравнивает элемент по низу</span></li>
+					<li><span class="styles italic">vertical-align</span>: <span class='styles'>middle</span>; <span
+							class="comment">//выравнивает элемент по середине</span></li>
+					<li><span class="styles italic">vertical-align</span>: <span class='styles'>sub</span>; <span
+							class="comment">//элемент изображается как подстрочный</span></li>
+					<li><span class="styles italic">vertical-align</span>: <span class='styles'>super</span>; <span
+							class="comment">//элемент изображается как надстрочный</span></li>
+				</ol>
+			</div>
+
+			<p>Изменения шрифта текста в CSS – свойство <span class="code_line"><span
+						class="styles">font-family</span></span> позволяет нам менять вид нашего текста на странице.
+				Существует два вида текста с засечками <span style="font-family: serif">(Тут есть засечки)</span> и без
+				засечек <span style="font-family: sans-serif">(Тут нет засечек)</span>. Засечки это маленькие выступы
+				на концах букв. </p>
+
+			<p>Шрифты значения которые будут представлены ниже называются web-безопасными шрифтами, так как есть почти у
+				каждого человека на компьютере. Ведь если шрифта на компьютере не будет то установится шрифт по
+				умолчанию. Обычно это Times New Roman. </p>
+
+			<p>Существует большое многообразие различных шрифтов. </p>
+
+			<img src="../projects/images/css_2_1.png" alt="">
+			<p class="accent">Практика</p>
+
+			<p>Перед выполнение задания на свойства создайте следующий текст на html странице: </p>
+
+			<img src="../projects/images/css_2_2.png" alt="">
+
+			<p class="accent">Задание 1</p>
+			<ul>
+				<li>Сделайте все <span class="code_line">&lt;<span class="tag">td</span>&gt;</span> жирным.</li>
+				<li>Сделайте <span class="code_line">&lt;<span class="tag">h1</span>&gt;</span> нежирным.</li>
+				<li>Сделайте одновременно <span class="code_line">&lt;<span class="tag">th</span>&gt;</span>, <span
+						class="code_line">&lt;<span class="tag">h1</span>&gt;</span> и <span class="code_line">&lt;<span
+							class="tag">h2</span>&gt;</span> нежирным.</li>
+			</ul>
+
+			<p class="accent">Задание 2</p>
+			<ul>
+				<li>Сделайте все <span class="code_line">&lt;<span class="tag">h2</span>&gt;</span> курсивом.</li>
+				<li>Сделайте все абзацы <span class="code_line">&lt;<span class="tag">p</span>&gt;</span> курсивом, а
+					первый абзац - нет.</li>
+			</ul>
+
+			<p class="accent">Задание 3</p>
+			<ul>
+				<li>Задайте для всех <span class="code_line">&lt;<span class="tag">h2</span>&gt;</span> размер текста
+					20px.</li>
+				<li>Задайте для всех абзацев <span class="code_line">&lt;<span class="tag">p</span>&gt;</span> размер
+					текста 15px.</li>
+			</ul>
+
+			<p class="accent">Задание 4</p>
+			<ul>
+				<li>Сделайте для абзацев <span class="code_line">&lt;<span class="tag">p</span>&gt;</span> шрифт Arial.
+				</li>
+				<li>Сделайте для <span class="code_line">&lt;<span class="tag">h2</span>&gt;</span> шрифт Times New
+					Roman.</li>
+				<li>Сделайте для <span class="code_line">&lt;<span class="tag">h3</span>&gt;</span> любой шрифт без
+					засечек.</li>
+			</ul>
+
+			<p class="accent">Задание 5</p>
+			<ul>
+				<li>Задайте расстояние между строк для абзацев <span class="code_line">&lt;<span
+							class="tag">p</span>&gt;</span> в 30px.</li>
+			</ul>
+
+			<p class="accent">Задание 6</p>
+			<ul>
+				<li>Задайте красную строку для всех абзацев 30px, для второго абзаца <span class="code_line">&lt;<span
+							class="tag">p</span>&gt;</span> уберите красную строку.</li>
+			</ul>
+
+			<p class="accent">Задание 7</p>
+			<ul>
+				<li>Поставьте текст в таблице <span class="code_line">&lt;<span class="tag">table</span>&gt;</span> по
+					верхнему краю по вертикали.</li>
+				<li>Поставьте текст в <span class="code_line">&lt;<span class="tag">th</span>&gt;</span> по центру по
+					вертикали.</li>
+			</ul>
+
+			<p class="accent">Задание 8</p>
+			<ul>
+				<li>Повторите страницу по примеру</li>
+			</ul>
+
+			<img src="../projects/images/css_2_3.png" alt="">
+		</article>
+	</div>
+</section>
+</body>
+</html>

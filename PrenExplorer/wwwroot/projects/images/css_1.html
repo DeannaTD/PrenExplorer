@@ -1,0 +1,1030 @@
+<!--<img src="../projects/images/html_2_1" alt="">-->
+<section class="project-container">
+	<div class="project-container__logo">
+		<img src="../projects/images/CSS-Logo.png" alt="Logo" srcset="" style="max-width: 200px">
+	</div>
+	
+	<p class="project-name">
+		Знакомство с CSS и первые свойства
+	</p>
+	<div class="description-block">
+		<article class="description-block__text">
+			<div class="logos">
+				<!-- <img class="app" src="../projects/images/AppInventor-Logo.png" alt=""> -->
+			</div>
+			
+			<p>CSS – Cascading Style Sheets (Каскадные Таблицы Стилей) - называются так, потому что HTML-элементы
+				которые распологаются внутри другого HTML-элемента могут наследовать CSS свойтсва своих родителей. </p>
+
+			<p>CSS – нужен для того чтобы задавать свойства для HTML–элементов. Свойствами html элементов являются
+				цвет текста, цвет заднего фона, размер текста, вид текста и многие другие.</p>
+			<p>Существует три способа подключения CSS к HTML-элементам: </p>
+			<p>Первый способ заключается в том, что css свойства записываются в отдельный файл и подключается через
+				специальный тег
+				<link>. </p>
+			<p>Преимущества такого подхода в том, что CSS файл может быть один, а HTML документов может быть любое
+				количество. Сделав изменение в одном месте CSS файла, эти изменения применсять ко всем HTML файлам к
+				которым подключен CSS.</p>
+			<p>Чтобы подключить CSS файл к HTML странице, в теге
+
+				<p class="code_line">&lt;<span class="tag">head</span>&gt;</p> нужно прописать такую конструкцию:
+				<p class="code_line">&lt;<span class="tag">link</span> <span class="attr">rel</span>="<span
+						class="value">stylesheet</span>" <span class="attr">href</span>="<span class="value">путь к
+						CSS-файлу</span>"></p>.
+				CSS файл должен иметь расширение <span class="italic">".css"</span>. Обычно его называют <span
+					class="italic">"styles.css"</span> или <span class="italic">"style.css"</span>.
+			</p>
+
+			<div class='code_container'>
+				<ol class='code_list'>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<ol class='list_nontype doctype'>
+					<li>&lt;<span class='tag'></span>!DOCTYPE html&gt;</li>
+					<li>&lt;<span class='tag'>html</span>&gt;</li>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>head</span>&gt;</li>
+						<li>&lt;<span class='tag'>meta</span> <span class='attr'>charset</span>="<span
+								class='value'>UTF-8</span>"&gt;</li>
+						<li>&lt;<span class='tag'>title</span>&gt;Это заголовок страницы&lt;<span
+								class='tag'></span>/<span class='tag'>title</span>&gt;</li>
+						<li>&lt;<span class='tag'>link</span> <span class='attr'>rel</span>="<span
+								class='value'>stylesheet</span>" <span class='attr'>href</span>="<span
+								class='value'>style.css</span>"&gt;</li>
+						<li>&lt;<span class='tag'></span>/<span class='tag'>head</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>body</span>&gt;</li>
+						<li>&lt;<span class='tag'>p</span>&gt;</li>
+						<li>Это абзац с текстом.</li>
+						<li>&lt;<span class='tag'></span>/<span class='tag'>p</span>&gt;</li>
+						<li>&lt;<span class='tag'></span>/<span class='tag'>body</span>&gt;</li>
+					</ol>
+					<li>&lt;<span class='tag'></span>/<span class='tag'>html</span>&gt;</li>
+				</ol>
+			</div>
+			<p>Можно подключать несколько css файлов к одному HTML-документу.</p>
+			<div class='code_container'>
+				<ol class='code_list'>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<ol class='list_nontype doctype'>
+					<li>&lt;<span class='tag'></span>!DOCTYPE html&gt;</li>
+					<li>&lt;<span class='tag'>html</span>&gt;</li>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>head</span>&gt;</li>
+						<li>&lt;<span class='tag'>meta</span> <span class='attr'>charset</span>="<span
+								class='value'>UTF-8</span>"&gt;</li>
+						<li>&lt;<span class='tag'>title</span>&gt;Это заголовок страницы&lt;<span
+								class='tag'></span>/<span class='tag'>title</span>&gt;</li>
+						<li>&lt;<span class='tag'>link</span> <span class='attr'>rel</span>="<span
+								class='value'>stylesheet</span>" <span class='attr'>href</span>="<span
+								class='value'>style1.css</span>"&gt;</li>
+						<li>&lt;<span class='tag'>link</span> <span class='attr'>rel</span>="<span
+								class='value'>stylesheet</span>" <span class='attr'>href</span>="<span
+								class='value'>style2.css</span>"&gt;</li>
+						<li>&lt;<span class='tag'>link</span> <span class='attr'>rel</span>="<span
+								class='value'>stylesheet</span>" <span class='attr'>href</span>="<span
+								class='value'>style3.css</span>"&gt;</li>
+						<li>&lt;<span class='tag'></span>/<span class='tag'>head</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>body</span>&gt;</li>
+						<li>&lt;<span class='tag'>p</span>&gt;</li>
+						<li>Это абзац с текстом.</li>
+						<li>&lt;<span class='tag'></span>/<span class='tag'>p</span>&gt;</li>
+						<li>&lt;<span class='tag'></span>/<span class='tag'>body</span>&gt;</li>
+					</ol>
+					<li>&lt;<span class='tag'></span>/<span class='tag'>html</span>&gt;</li>
+				</ol>
+			</div>
+
+			<p>Второй способ заключается в том, что css можно разместить стили внутри тега <p class="code_line">
+					&lt;<span class="tag">style</span>&gt;</p>, который пишется внутри тега <p class="code_line">
+					&lt;<span class="tag">head</span>&gt;</p>. Недостаток
+				этого способа в том что стили можно применять только для одного HTML–документа. Этот способ не
+				рекомендуется. </p>
+
+			<div class='code_container'>
+				<ol class='code_list'>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<ol class='list_nontype doctype'>
+					<li>&lt;<span class='tag'></span>!DOCTYPE html&gt;</li>
+					<li>&lt;<span class='tag'>html</span>&gt;</li>
+					<ol class="list_nontype">
+						<li> &lt;<span class='tag'>head</span>&gt;</li>
+						<li> &lt;<span class='tag'>meta</span> <span class='attr'>charset</span>="<span
+								class='value'>UTF-8</span>"&gt;</li>
+						<li> &lt;<span class='tag'>title</span>&gt;Это заголовок страницы&lt;<span
+								class='tag'></span>/<span class='tag'>title</span>&gt;</li>
+						<li> &lt;<span class='tag'>style</span>&gt;</li>
+						<li class="style_list_item">
+							<ol class="list_nontype">
+								<li><span class='selector'>p</span>{</li>
+								<li><span class='styles italic'>color</span>: <span class='styles'>red</span>;</li>
+								<li><span>}</span></li>
+							</ol>
+						</li>
+						<li> &lt;<span class='tag'></span>/<span class='tag'>style</span>&gt;</li>
+						<li> &lt;<span class='tag'></span>/<span class='tag'>head</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li> &lt;<span class='tag'>body</span>&gt;</li>
+						<li> &lt;<span class='tag'>p</span>&gt;</li>
+						<li> Это абзац с текстом.</li>
+						<li> &lt;<span class='tag'></span>/<span class='tag'>p</span>&gt;</li>
+						<li> &lt;<span class='tag'></span>/<span class='tag'>body</span>&gt;</li>
+					</ol>
+					<li>&lt;<span class='tag'></span>/<span class='tag'>html</span>&gt;</li>
+				</ol>
+			</div>
+			<p>Третий способ заключается в том, что css можно добавить для каждого тега при помощи атрибута "<span
+					class="code_line"><span class="attr">style</span></span>".</p>
+			<div class='code_container'>
+				<ol class='code_list'>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<ol class='list_nontype doctype'>
+					<li>&lt;<span class='tag'></span>!DOCTYPE html&gt;</li>
+					<li>&lt;<span class='tag'>html</span>&gt;</li>
+					<ol class="list_nontype">
+						<li> &lt;<span class='tag'>head</span>&gt;</li>
+						<li> &lt;<span class='tag'>meta</span> <span class='attr'>charset</span>="<span
+								class='value'>UTF-8</span>"&gt;</li>
+						<li> &lt;<span class='tag'>title</span>&gt;Это заголовок страницы&lt;<span
+								class='tag'></span>/<span class='tag'>title</span>&gt;</li>
+						<li> &lt;<span class='tag'></span>/<span class='tag'>head</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li> &lt;<span class='tag'>body</span>&gt;</li>
+						<li> &lt;<span class='tag'>p</span> <span class='attr'>style</span>="<span
+								class='value'>color</span>: <span class='styles italic styles_inline'>color</span>:
+							<span class='styles'>red</span>; <span
+								class='styles italic styles_inline'>font-weight</span>: <span
+								class='styles'>bold</span>;"&gt;</li>
+						<li> Это абзац с текстом.</li>
+						<li> &lt;<span class='tag'></span>/<span class='tag'>p</span>&gt;</li>
+						<li> &lt;<span class='tag'></span>/<span class='tag'>body</span>&gt;</li>
+					</ol>
+					<li>&lt;<span class='tag'></span>/<span class='tag'>html</span>&gt;</li>
+				</ol>
+			</div>
+			<p>Существует такое правило: если что-то можно сделать первым способом, то использовать второй и третий
+				способ дурной тон.</p>
+			<p>Общее CSS правило - это так мы должны писать текст в CSS документе </p>
+			<div class="code_container">
+				<ol class="list_nontype">
+					<li><span class='selector'>селектор</span> {</li>
+					<li><span class='styles italic'>свойство</span>: <span class="styles">значение свойства</span>;</li>
+					<li>}</li>
+				</ol>
+			</div>
+			<p>Каждому тегу в HTML соответствует так называемый селектор CSS. Селектор это элемент которому мы задаем
+				css свойство. От англ.слова select – вбирать.</p>
+
+			<p>Существует три вида основных селекторов: по классу, по идентификатору(id), по названию тега. </p>
+			<p>По названию тега – это такой селектор когда в css мы должны писать название тега для которого хотим
+				задать свойства, если в HTML мы ставили стрелочки &lt;&gt;, то в css их ставить не нужно.</p>
+			<p>Пример : зададим для всех наших параграфов цвет текста красный: </p>
+			<div class="code_container">
+				<ol class="list_nontype">
+					<li><span class='selector'>.p</span> {</li>
+					<li><span class='styles italic'>color</span>: <span class='styles'>red</span>;</li>
+					<li>}</li>
+				</ol>
+			</div>
+			<p>По названию класса нашего тега – в html мы можем задать класс для наших тегов с помощью атрибута <span
+					class="code_line"><span class="attr">class</span>="<span class="value">class_name</span>"</span>,
+				одно название класса мы можем применять для нескольких HTML элементов. Когда мы используем селектор по
+				классу, то в CSS перед названием класса нужно поставить точку: <span class="code_line"><span
+						class="selector">.class_name</span></span>.</p>
+			<p>Пример : у нашего тега <span class="code_line"><span class="tag">p</span></span> будет класс <span
+					class="code_line"><span class="selector">paragraph</span></span> зададим для всех параграфов у
+				которых есть класс <span class="code_line"><span class="selector">paragraph</span></span>
+				задать цвет текста красный: </p>
+			<div class="code_container" style="display: block;">
+				<ol class='list_nontype'>
+					<li><span class="comment">&lt;--HTML--></span></li>
+					<li>&lt;<span class='tag'>p</span> <span class='attr'>id</span>="<span
+							class='value'>peshka</span>"&gt;&lt;<span class='tag'></span>/<span class='tag'>p</span>&gt;
+					</li>
+				</ol>
+				<ol class='list_nontype doctype'>
+					<li><span class="comment">/* CSS */</span></li>
+					<li><span class='selector'>#peshka</span> {</li>
+					<li><span class='styles italic'>color</span>: <span class='styles'>red</span>;</li>
+					<li>}</li>
+				</ol>
+			</div>
+			<p class="accent">Первые свойства css и их значения</p>
+			<p>Свойство которое позволяет нам задать цвет нашему тексту – <span class="code_line"><span
+						class="attr">color</span></span>. Значения для этого свойства можно задать тремя способами:
+				английское название тега, rgb(0-255,0-255,0-255), #000000.</p>
+			<p>Пример:</p>
+			<div class="code_container">
+				<ol class="code_list">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<div>
+					<ol class="list_nontype">
+						<li><span class='selector'>.first</span> {</li>
+						<li><span class='styles italic'>color</span>: <span class='styles'>red</span>;</li>
+						<li>}</li>
+					</ol>
+					<ol class="list_nontype">
+						<li><span class='selector'>.p</span> {</li>
+						<li><span class='styles italic'>color</span>: <span class="styles">rgb(255, 236, 114)</span>;
+						</li>
+						<li>}</li>
+					</ol>
+					<ol class="list_nontype">
+						<li><span class='selector'>.p</span> {</li>
+						<li><span class='styles italic'>color</span>: <span class='styles'>#ff0000</span>;</li>
+						<li>}</li>
+					</ol>
+				</div>
+			</div>
+
+			<p>Для задания ширины и высоты элементов в CSS предназначены свойства <span class="code_line"><span
+						class="styles">width</span></span> и <span class="code_line"><span
+						class="styles">height</span></span>. Значения этих свойств, как правило, задаются в пикселях.
+				Пиксели обозначаются как px и добавляются к числу.</p>
+
+			<p>Есть таблица и для ее ячеек мы хотим задать ширину 200px и высоту 100px</p>
+
+			<div class='code_container'>
+				<ol class='code_list'>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<ol class='list_nontype'>
+					<li>&lt;<span class='tag'>table</span> <span class='attr'>border</span>="<span
+							class='value'>1</span>"&gt;</li>
+					<li>
+						<ol class="list_nontype">
+							<li> &lt;<span class='tag'>tr</span>&gt;</li>
+							<li> &lt;<span class='tag'>td</span>&gt;1&lt;<span class='tag'></span>/<span
+									class='tag'>td</span>&gt;</li>
+							<li> &lt;<span class='tag'>td</span>&gt;2&lt;<span class='tag'></span>/<span
+									class='tag'>td</span>&gt;</li>
+							<li> &lt;<span class='tag'>td</span>&gt;3&lt;<span class='tag'></span>/<span
+									class='tag'>td</span>&gt;</li>
+							<li> &lt;<span class='tag'></span>/<span class='tag'>tr</span>&gt;</li>
+						</ol>
+					</li>
+					<li>
+						<ol class="list_nontype">
+							<li> &lt;<span class='tag'>tr</span>&gt;</li>
+							<li> &lt;<span class='tag'>td</span>&gt;4&lt;<span class='tag'></span>/<span
+									class='tag'>td</span>&gt;</li>
+							<li> &lt;<span class='tag'>td</span>&gt;5&lt;<span class='tag'></span>/<span
+									class='tag'>td</span>&gt;</li>
+							<li> &lt;<span class='tag'>td</span>&gt;6&lt;<span class='tag'></span>/<span
+									class='tag'>td</span>&gt;</li>
+							<li> &lt;<span class='tag'></span>/<span class='tag'>tr</span>&gt;</li>
+						</ol>
+					</li>
+					<li>
+						<ol class="list_nontype">
+							<li> &lt;<span class='tag'>tr</span>&gt;</li>
+							<li> &lt;<span class='tag'>td</span>&gt;7&lt;<span class='tag'></span>/<span
+									class='tag'>td</span>&gt;</li>
+							<li> &lt;<span class='tag'>td</span>&gt;8&lt;<span class='tag'></span>/<span
+									class='tag'>td</span>&gt;</li>
+							<li> &lt;<span class='tag'>td</span>&gt;9&lt;<span class='tag'></span>/<span
+									class='tag'>td</span>&gt;</li>
+							<li> &lt;<span class='tag'></span>/<span class='tag'>tr</span>&gt;</li>
+						</ol>
+					</li>
+					<li>&lt;<span class='tag'></span>/<span class='tag'>table</span>&gt;</li>
+				</ol>
+			</div>
+			<p>В CSS фале прописываем следующий код:</p>
+			<div class="code_container">
+				<ol class="code_list">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<ol class="list_nontype">
+					<li><span class='selector'>td</span> {</li>
+					<li><span class='styles italic'>width</span>: <span class='styles'>200px</span>;</li>
+					<li><span class='styles italic'>height</span>: <span class='styles'>100px</span>;</li>
+					<li>}</li>
+				</ol>
+			</div>
+			<p>Так будет выглядеть таблица в браузере</p>
+			<img src="../projects/images/css_1_1.png" alt="">
+
+			<p>Сейчас научимся выравнивать текст. Для этого используется свойство <span class="code_line"><span
+						class="styles">text-align</span></span>. Текст можно выравнять по левому краю (значение <span
+					class="code_line"><span class="styles">left</span></span>), по правому (значение <span
+					class="code_line"><span class="styles">right</span></span>), по центру (значение <span
+					class="code_line"><span class="styles">center</span></span>) и одновременно и по правому, и по
+				левому краю (значение <span class="code_line"><span class="styles">justify</span></span>).</p>
+			<div class="code_container">
+				<ol class="code_list">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<div>
+					<ol class="list_nontype">
+						<li><span class='selector'>p</span> {</li>
+						<li><span class='styles italic'>text-align</span>: <span class='styles'>left</span>; <span
+								class="comment"> //обычно стоит везде по умолчанию</span></li>
+						<li>}</li>
+					</ol>
+					<ol class="list_nontype">
+						<li><span class='selector'>p</span> {</li>
+						<li><span class='styles italic'>text-align</span>: <span class='styles'>right</span>;</li>
+						<li>}</li>
+					</ol>
+					<ol class="list_nontype">
+						<li><span class='selector'>p</span> {</li>
+						<li><span class='styles italic'>text-align</span>: <span class='styles'>center</span>;</li>
+						<li>}</li>
+					</ol>
+					<ol class="list_nontype">
+						<li><span class='selector'>p</span> {</li>
+						<li><span class='styles italic'>text-align</span>: <span class='styles'>justify</span>; <span
+								class="comment"> //работу этого свойства можно увидеть, если текст в параграфе будет
+								достаточно большим</span></li>
+						<li>}</li>
+					</ol>
+					</ol>
+				</div>
+			</div>
+			<p>Например:</p>
+			<div class='code_container'>
+				<ol class='code_list'>
+					<li></li>
+				</ol>
+				<ol class='list_nontype'>
+					<li>&lt;<span class='tag'>p</span>&gt; очень длинный текст…. &lt;<span class='tag'></span>/<span
+							class='tag'>p</span>&gt; </li>
+				</ol>
+			</div>
+
+			<div class="code_container">
+				<ol class="code_list">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<ol class="list_nontype">
+					<li><span class='selector'>p</span> { </li>
+					<li><span class='styles italic'>width</span>: <span class='styles'>300px</span>;</li>
+					<li><span class='styles italic'>text-align</span>: <span class='styles'>justify</span>;</li>
+					<li>}</li>
+				</ol>
+			</div>
+			<p>Как видите текст выравнен одновременно и по левому и по правому краю</p>
+			<img src="../projects/images/css_1_2.png" alt="">
+
+			<p class="accent">Практика</p>
+
+			<p class="accent">Задание 1</p>
+			<p>Создайте и подключете к вашему новому html файлу css файл с названием style.css</p>
+			<p class="accent">Задание 2</p>
+			<p>В вашем файле style.css разместите код, который будет красить абзацы в красный цвет. Откройте страницу
+				сайта в браузере и убедитесь, что все абзацы стали красными.</p>
+			<p class="accent">Задание 3</p>
+			<p>Используя соответствующие селекторы покрасьте заголовки h1 в зеленый цвет,</p>
+			<p>h2 в голубой, h3 в ораньжевый </p>
+			<p class="accent">Задание 4 </p>
+			<p>Сделайте в HTML коде абзацы с длинным текстом. Написав внутри p – текст lorem и нажав кнопку TAB у вас
+				появится текст заглушка. C помощью CSS поставьте всем абзацам ширину 300px</p>
+
+			<p class="accent">Задание 5</p>
+			<p>Дана следующая таблица </p>
+			<div class='code_container'>
+				<ol class='code_list'>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<ol class='list_nontype'>
+					<li>&lt;<span class='tag'>table</span> <span class='attr'>border</span>="<span
+							class='value'>1</span>"&gt;</li>
+					<li>
+						<ol class="list_nontype">
+							<li>&lt;<span class='tag'>tr</span>&gt;</li>
+							<li>&lt;<span class='tag'>td</span>&gt;Иван&lt;<span class='tag'></span>/<span
+									class='tag'>td</span>&gt;</li>
+							<li>&lt;<span class='tag'>td</span>&gt;Иванов&lt;<span class='tag'></span>/<span
+									class='tag'>td</span>&gt;</li>
+							<li>&lt;<span class='tag'>td</span>&gt;200$&lt;<span class='tag'></span>/<span
+									class='tag'>td</span>&gt;</li>
+							<li>&lt;<span class='tag'></span>/<span class='tag'>tr</span>&gt;</li>
+						</ol>
+					</li>
+					<li>
+						<ol class="list_nontype">
+							<li>&lt;<span class='tag'>tr</span>&gt;</li>
+							<li>&lt;<span class='tag'>td</span>&gt;Николай&lt;<span class='tag'></span>/<span
+									class='tag'>td</span>&gt;</li>
+							<li>&lt;<span class='tag'>td</span>&gt;Петров&lt;<span class='tag'></span>/<span
+									class='tag'>td</span>&gt;</li>
+							<li>&lt;<span class='tag'>td</span>&gt;300$&lt;<span class='tag'></span>/<span
+									class='tag'>td</span>&gt;</li>
+							<li>&lt;<span class='tag'></span>/<span class='tag'>tr</span>&gt;</li>
+						</ol>
+					</li>
+					<li>
+						<ol class="list_nontype">
+							<li>&lt;<span class='tag'>tr</span>&gt;</li>
+							<li>&lt;<span class='tag'>td</span>&gt;Владимир&lt;<span class='tag'></span>/<span
+									class='tag'>td</span>&gt;</li>
+							<li>&lt;<span class='tag'>td</span>&gt;Сидоров&lt;<span class='tag'></span>/<span
+									class='tag'>td</span>&gt;</li>
+							<li>&lt;<span class='tag'>td</span>&gt;400$&lt;<span class='tag'></span>/<span
+									class='tag'>td</span>&gt;</li>
+							<li>&lt;<span class='tag'></span>/<span class='tag'>tr</span>&gt;</li>
+						</ol>
+					</li>
+					<li>&lt;<span class='tag'></span>/<span class='tag'>table</span>&gt;</li>
+				</ol>
+			</div>
+			<p>Установите ячейкам этой таблицы ширину в 400px и высоту в 300px</p>
+
+			<p class="accent">Задание 6</p>
+			<p>Скопируйте следующий HTML код и решите для него приведенные ниже задачи. Задание делать в новом HTML
+				файле.</p>
+			<div class='code_container'>
+				<ol class='code_list'>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<div>
+					<ol class='list_nontype'>
+						<li>&lt;<span class='tag'>h1</span>&gt;Главный заголовок страницы&lt;<span
+								class='tag'></span>/<span class='tag'>h1</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>table</span> <span class='attr'>border</span>="<span
+								class='value'>1</span>"&gt;</li>
+						<li>
+							<ol class="list_nontype">
+								<li>&lt;<span class='tag'>tr</span>&gt;</li>
+								<li>&lt;<span class='tag'>th</span>&gt;Продукт&lt;<span class='tag'></span>/<span
+										class='tag'>th</span>&gt;</li>
+								<li>&lt;<span class='tag'>th</span>&gt;Цена&lt;<span class='tag'></span>/<span
+										class='tag'>th</span>&gt;</li>
+								<li>&lt;<span class='tag'>th</span>&gt;Количество&lt;<span class='tag'></span>/<span
+										class='tag'>th</span>&gt;</li>
+								<li>&lt;<span class='tag'></span>/<span class='tag'>tr</span>&gt;</li>
+							</ol>
+						</li>
+						<li>
+							<ol class="list_nontype">
+								<li>&lt;<span class='tag'>tr</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;Яблоки&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;100&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;5кг&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'></span>/<span class='tag'>tr</span>&gt;</li>
+								<li>&lt;<span class='tag'>tr</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;Апельсины&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;200&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;6кг&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'></span>/<span class='tag'>tr</span>&gt;</li>
+							</ol>
+						</li>
+						<li>
+							<ol class="list_nontype">
+								<li>&lt;<span class='tag'>tr</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;Бананы&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;300&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;7кг&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'></span>/<span class='tag'>tr</span>&gt;</li>
+							</ol>
+						</li>
+						<li>&lt;<span class='tag'></span>/<span class='tag'>table</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>h2</span>&gt;Второстепенный заголовок 1&lt;<span
+								class='tag'></span>/<span class='tag'>h2</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>p</span>&gt;</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elitorire</li>
+						<li>aenean a dapibus magna, ac interdum nisl. Suspendisse egetil</li>
+						<li>fringilla nibh, eu commodo arcu. Donec lacinia tempor velite</li>
+						<li>sed tincidunt. Aliquam porttitor nulla purus, vel vulputater</li>
+						<li>ipsum faucibus sed. Phasellus sodales, lorem vel cursus vehi</li>
+						<li>ante purus lacini dui, interdum fringilla massa eros ut duir.</li>
+						<li>&lt;<span class='tag'></span>/<span class='tag'>p</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>p</span>&gt;</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elitorire</li>
+						<li>aenean a dapibus magna, ac interdum nisl. Suspendisse egetil</li>
+						<li>fringilla nibh, eu commodo arcu. Donec lacinia tempor velite</li>
+						<li>sed tincidunt. Aliquam porttitor nulla purus, vel vulputater</li>
+						<li>ipsum faucibus sed. Phasellus sodales, lorem vel cursus vehi</li>
+						<li>ante purus lacini dui, interdum fringilla massa eros ut duir.</li>
+						<li>&lt;<span class='tag'></span>/<span class='tag'>p</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>h2</span>&gt;Второстепенный заголовок 2&lt;<span
+								class='tag'></span>/<span class='tag'>h2</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>p</span>&gt;</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elitorire</li>
+						<li>aenean a dapibus magna, ac interdum nisl. Suspendisse egetil</li>
+						<li>fringilla nibh, eu commodo arcu. Donec lacinia tempor velite</li>
+						<li>sed tincidunt. Aliquam porttitor nulla purus, vel vulputater</li>
+						<li>ipsum faucibus sed. Phasellus sodales, lorem vel cursus vehi</li>
+						<li>ante purus lacini dui, interdum fringilla massa eros ut duir.</li>
+						<li>&lt;<span class='tag'></span>/<span class='tag'>p</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>p</span>&gt;</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elitorire</li>
+						<li>aenean a dapibus magna, ac interdum nisl. Suspendisse egetil</li>
+						<li>fringilla nibh, eu commodo arcu. Donec lacinia tempor velite</li>
+						<li>sed tincidunt. Aliquam porttitor nulla purus, vel vulputater</li>
+						<li>ipsum faucibus sed. Phasellus sodales, lorem vel cursus vehi</li>
+						<li>ante purus lacini dui, interdum fringilla massa eros ut duir.</li>
+						<li>&lt;<span class='tag'></span>/<span class='tag'>p</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>h1</span>&gt;Главный заголовок страницы&lt;<span
+								class='tag'></span>/<span class='tag'>h1</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>table</span> <span class='attr'>border</span>="<span
+								class='value'>1</span>"&gt;</li>
+						<li>
+							<ol class="list_nontype">
+								<li>&lt;<span class='tag'>tr</span>&gt;</li>
+								<li>&lt;<span class='tag'>th</span>&gt;Продукт&lt;<span class='tag'></span>/<span
+										class='tag'>th</span>&gt;</li>
+								<li>&lt;<span class='tag'>th</span>&gt;Цена&lt;<span class='tag'></span>/<span
+										class='tag'>th</span>&gt;
+								</li>
+								<li>&lt;<span class='tag'>th</span>&gt;Количество&lt;<span class='tag'></span>/<span
+										class='tag'>th</span>&gt;</li>
+								<li>&lt;<span class='tag'></span>/<span class='tag'>tr</span>&gt;</li>
+							</ol>
+						</li>
+						<li>
+							<ol class="list_nontype">
+								<li>&lt;<span class='tag'>tr</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;Яблоки&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;100&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;
+								</li>
+								<li>&lt;<span class='tag'>td</span>&gt;5кг&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;
+								</li>
+								<li>&lt;<span class='tag'></span>/<span class='tag'>tr</span>&gt;</li>
+								<li>&lt;<span class='tag'>tr</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;Апельсины&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;200&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;
+								</li>
+								<li>&lt;<span class='tag'>td</span>&gt;6кг&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;
+								</li>
+								<li>&lt;<span class='tag'></span>/<span class='tag'>tr</span>&gt;</li>
+							</ol>
+						</li>
+						<li>
+							<ol class="list_nontype">
+								<li>&lt;<span class='tag'>tr</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;Бананы&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;300&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;
+								</li>
+								<li>&lt;<span class='tag'>td</span>&gt;7кг&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;
+								</li>
+								<li>&lt;<span class='tag'></span>/<span class='tag'>tr</span>&gt;</li>
+							</ol>
+						</li>
+						<li>&lt;<span class='tag'></span>/<span class='tag'>table</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>h2</span>&gt;Второстепенный заголовок 1&lt;<span
+								class='tag'></span>/<span class='tag'>h2</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>p</span>&gt;</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elitorire</li>
+						<li>aenean a dapibus magna, ac interdum nisl. Suspendisse egetil</li>
+						<li>fringilla nibh, eu commodo arcu. Donec lacinia tempor velite</li>
+						<li>sed tincidunt. Aliquam porttitor nulla purus, vel vulputater</li>
+						<li>ipsum faucibus sed. Phasellus sodales, lorem vel cursus vehi</li>
+						<li>ante purus lacini dui, interdum fringilla massa eros ut duir.</li>
+						<li>&lt;<span class='tag'></span>/<span class='tag'>p</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>p</span>&gt;</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elitorire</li>
+						<li>aenean a dapibus magna, ac interdum nisl. Suspendisse egetil</li>
+						<li>fringilla nibh, eu commodo arcu. Donec lacinia tempor velite</li>
+						<li>sed tincidunt. Aliquam porttitor nulla purus, vel vulputater</li>
+						<li>ipsum faucibus sed. Phasellus sodales, lorem vel cursus vehi</li>
+						<li>ante purus lacini dui, interdum fringilla massa eros ut duir.</li>
+						<li>&lt;<span class='tag'></span>/<span class='tag'>p</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>h2</span>&gt;Второстепенный заголовок 2&lt;<span
+								class='tag'></span>/<span class='tag'>h2</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>p</span>&gt;</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elitorire</li>
+						<li>aenean a dapibus magna, ac interdum nisl. Suspendisse egetil</li>
+						<li>fringilla nibh, eu commodo arcu. Donec lacinia tempor velite</li>
+						<li>sed tincidunt. Aliquam porttitor nulla purus, vel vulputater</li>
+						<li>ipsum faucibus sed. Phasellus sodales, lorem vel cursus vehi</li>
+						<li>ante purus lacini dui, interdum fringilla massa eros ut duir.</li>
+						<li>&lt;<span class='tag'></span>/<span class='tag'>p</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>p</span>&gt;</li>
+						<li>Lorem ipsum dolor sit amet, consectetur adipiscing elitorire</li>
+						<li>aenean a dapibus magna, ac interdum nisl. Suspendisse egetil</li>
+						<li>fringilla nibh, eu commodo arcu. Donec lacinia tempor velite</li>
+						<li>sed tincidunt. Aliquam porttitor nulla purus, vel vulputater</li>
+						<li>ipsum faucibus sed. Phasellus sodales, lorem vel cursus vehi</li>
+						<li>ante purus lacini dui, interdum fringilla massa eros ut duir.</li>
+						<li>&lt;<span class='tag'></span>/<span class='tag'>p</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>h2</span>&gt;Второстепенный заголовок 3&lt;<span
+								class='tag'></span>/<span class='tag'>h2</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>table</span> <span class='attr'>border</span>="<span
+								class='value'>1</span>"&gt;</li>
+						<li>
+							<ol class="list_nontype">
+								<li>&lt;<span class='tag'>tr</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;ячейка 1&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;ячейка 2&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;ячейка 3&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'></span>/<span class='tag'>tr</span>&gt;</li>
+							</ol>
+						</li>
+						<li>
+							<ol class="list_nontype">
+								<li>&lt;<span class='tag'>tr</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;ячейка 4&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;ячейка 5&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;ячейка 6&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'></span>/<span class='tag'>tr</span>&gt;</li>
+							</ol>
+						</li>
+						<li>
+							<ol class="list_nontype">
+								<li>&lt;<span class='tag'>tr</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;ячейка 7&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;ячейка 8&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;ячейка 9&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'></span>/<span class='tag'>tr</span>&gt;</li>
+							</ol>
+						</li>
+						<li>&lt;<span class='tag'></span>/<span class='tag'>table</span>&gt;</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>
+							&lt;<span class='tag'>h2</span>&gt;Второстепенный заголовок 3&lt;<span
+								class='tag'></span>/<span class='tag'>h2</span>&gt;
+						</li>
+					</ol>
+					<ol class="list_nontype">
+						<li>&lt;<span class='tag'>table</span> <span class='attr'>border</span>="<span
+								class='value'>1</span>"&gt;</li>
+						<li>
+							<ol class="list_nontype">
+								<li>&lt;<span class='tag'>tr</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;ячейка 1&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;ячейка 2&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;ячейка 3&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'></span>/<span class='tag'>tr</span>&gt;</li>
+							</ol>
+						</li>
+						<li>
+							<ol class="list_nontype">
+								<li>&lt;<span class='tag'>tr</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;ячейка 4&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;ячейка 5&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;ячейка 6&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'></span>/<span class='tag'>tr</span>&gt;</li>
+							</ol>
+						</li>
+						<li>
+							<ol class="list_nontype">
+								<li>&lt;<span class='tag'>tr</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;ячейка 7&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;ячейка 8&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'>td</span>&gt;ячейка 9&lt;<span class='tag'></span>/<span
+										class='tag'>td</span>&gt;</li>
+								<li>&lt;<span class='tag'></span>/<span class='tag'>tr</span>&gt;</li>
+							</ol>
+						</li>
+						<li>&lt;<span class='tag'></span>/<span class='tag'>table</span>&gt;</li>
+					</ol>
+
+				</div>
+			</div>
+
+			<p class="accent">Задача 6.1</p>
+			<p>Поставьте все заголовки h1 по правому краю.</p>
+			<p class="accent">Задача 6.2</p>
+			<p>Поставьте все заголовки h2 по центру.</p>
+			<p class="accent">Задача 6.3</p>
+			<p>Установите всем таблицам ширину в 500px.</p>
+			<p class="accent">Задача 6.4</p>
+			<p>Поставьте текст в ячейках td по центру</p>
+			<p class="accent">Задача 6.5</p>
+			<p>Установите всем абзацам ширину в 300px</p>
+			<p class="accent">Задача 6.6</p>
+			<p>Выровняйте текст всех абзацев одновремено по правому и по левому краю.</p>
+			<p class="accent">Задача 6.7</p>
+			<p>Установите заголовкам ширину в 300px. Поставьте их по центру. Обратите внивание что центрирование будет
+				происходить внутри этих 300px.</p>
+		</article>
+	</div>
+</section>

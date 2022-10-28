@@ -1,0 +1,74 @@
+<!-- <link rel="stylesheet" href="../css/lesson.css"> -->
+<section class="project-container new-project">
+	<div class="project-container__logo">
+		<img src="../projects/img/logos/html-logo.png" alt="Logo" class="project-logo">
+		<!-- <img src="../img/logos/html-logo.png" alt="Logo" class="project-logo"> -->
+	</div>
+	
+	<p class="project-name">
+		Работа с таблицами
+	</p>
+	<div class="description-block">
+		<article class="description-block__text">
+			<p>Сейчас мы с вами научимся создавать таблицы с помощью HTML</p>
+			<p>Думаю, вы представляете, что такое таблица в обычной жизни - это набор строк и столбцов, на пересечении
+				которых находятся ячейки.</p>
+			<p>В HTML таблицы создаются по похожему принципу. Там тоже есть столбцы и строки с ячейками, однако HTML код
+				таблиц при первом взгляде может показаться непривычным: таблицы создаются по рядам - сначала первый ряд,
+				потом второй и так далее.</p>
+			<p>Теги которые испольуются при создании таблицы:</p>
+			<ul>
+				<li><span class="code-inline">&lt;<span class="tag-name">table</span>&gt; &lt;/<span class="tag-name">table</span>&gt;</span> - является главным при создании таблицы</li>
+				<li><span class="code-inline">&lt;<span class="tag-name">tr</span>&gt;&lt;/<span class="tag-name">tr</span>&gt;</span> - создает строку в таблице, которая потом разбивается на ячейки</li>
+				<li><span class="code-inline">&lt;<span class="tag-name">th</span>&gt;&lt;/<span class="tag-name">th</span>&gt;</span> - ячейка-заголовок, текст внутри этого тега будет
+					жирным и распологается по центру</li>
+				<li><span class="code-inline">&lt;<span class="tag-name">td</span>&gt;&lt;/<span class="tag-name">td</span>&gt;</span> - обычная ячейка</li>
+			</ul>
+			<p>Атрибуты для тега <span class="code-inline"><span class="tag-name">table</span></span>: </p>
+			<ul>
+				<li>
+					<p><span class="code-inline"><span class="attribute-name">border</span></span> – задает ширину границ для таблицы. Значение по умолчанию - 0</p>
+				</li>
+				<li>
+					<p><span class="code-inline"><span class="attribute-name">cellspacing</span></span> – управляет расстоянием между ячейками</p>
+				</li>
+				<li>
+					<p><span class="code-inline"><span class="attribute-name">width</span></span> – позволяет изменять ширину таблицы</p>
+				</li>
+				<li>
+					<p><span class="code-inline"><span class="attribute-name">height</span></span> – позволяет изменять высоту таблицы</p>
+				</li>
+			</ul>
+
+			<p>Атрибут для всех тегов таблицы: </p>
+			<ul>
+				<li>
+					<p><span class="code-inline"><span class="attribute-name">align</span></span> – в тегах tr, th, td выравнивает текст. Если атрибут
+						вставить в тег <span class="code-inline"><span class="tag-name">table</span></span>, то будет перемещаться вся таблица. </p>
+					<p>Синтаксис: У данного атрибута три значения <span class="code-inline"><span class="attribute-value">left</span></span> – вырвнивает текст по левому краю, <span class="code-inline"><span class="attribute-value">center</span></span> –
+						выравнивает текст по центру, <span class="code-inline"><span class="attribute-value">right</span></span> – выравнивает текст по правому краю </p>
+				</li>
+				<li>
+					<p><span class="code-inline"><span class="attribute-name">bgcolor</span></span> – позволяет перекрашивать задний фон в тегах таблицы</p>
+					<p>Синтаксис:
+					<span class="code-inline"><span class="attribute-name">bgcolor</span> = "<span class="attribute-value">red</span>"</span> - можем задавать английским названием цвета, или
+					<span class="code-inline"><span class="attribute-name">bgcolor</span> = "<span class="attribute-value">#FF00A1<span>"</span> - в hex-формате</p>
+				</li>
+			</ul>
+			<p>Давайте для примера сделаем таблицу с тремя рядами и тремя ячейками в каждом ряду:</p>
+			<img src="../projects/img/html/html_7_1.png" alt="">
+			<p>Результат выполнения кода : </p>
+			<img src="../projects/img/html/html_7_2.png" alt="">
+			<p>Пример создание таблицы с использование тега th </p>
+			<img src="../projects/img/html/html_7_3.png" alt="">
+			<p>Результат выполнения кода </p>
+			<img src="../projects/img/html/html_7_4.png" alt="">
+			<p class="task"><span class="danger_underlined">Задание 1:</span> Создайте таблицу по образцу</p>
+			<img src="../projects/img/html/html_7_5.png" alt="">
+			<p><span class="danger_underlined">Задание 2</span> Создайте таблицу по образцу</p>
+			<img src="../projects/img/html/html_7_6.png" alt="">
+		</article>
+	</div>
+</section>
+
+

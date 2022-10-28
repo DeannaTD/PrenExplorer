@@ -1,0 +1,99 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../projects/projectStyle.css">
+	</head>
+<body>
+<!--<img src="../projects/images/html_2_1" alt="">-->
+<section class="project-container">
+	<div class="project-container__logo">
+		<img src="../projects/images/CSS-Logo.png" alt="Logo" srcset="" style="max-width: 200px">
+	</div>
+	
+	<p class="project-name">
+		Практика по одноколоночным макетам
+	</p>
+	<div class="description-block">
+		<article class="description-block__text">
+			<div class="logos">
+				<!-- <img class="app" src="../projects/images/AppInventor-Logo.png" alt=""> -->
+			</div>
+			
+
+
+			<div class="accent">Расширение элемента</div>
+
+			<p>
+				По умолчание добавление <span class='code_line'><span class='styles italic'>padding</span></span> и <span
+					class='code_line'><span class='styles italic'>border</span></span> разширяет элемент: если мы задали
+			</p>
+			<div class='code_container'>
+				<ol class='list_nontype plain'>
+					<li><span class='styles italic'>width</span>: <span class='styles'>100px</span>;</li>
+					<li><span class='styles italic'>padding</span>: <span class='styles'>20px</span>;</li>
+				</ol>
+			</div>
+			<p>то реальная ширина будет 120px. А если мы еще зададим <span class='code_line'><span
+						class='styles italic'>border-left</span>:<span class='styles'> 10px</span>;</span>, то реальная
+				ширина станет 130px. </p>
+
+			<p>Если расширение элемента будет нам мешать в работе, то есть специальное свойство которое позволяет
+				запретить расширяться элементам при добавлении свойства <span class='code_line'><span
+						class='styles italic'>padding</span></span> и <span class='code_line'><span
+						class='styles italic'>border</span></span>. </p>
+
+			<div class='code_container'>
+				<ol class='list_nontype'>
+					<li><span class='styles italic'>box-sizing</span>: <span class='styles'>content-box</span>; <span class="comment">
+						//и
+							padding, и border расширяют блок стоит по умолчанию
+					</span></li>
+					<li><span class='styles italic'>box-sizing</span>: <span class='styles'>border-box</span>;<span class="comment">
+						 //и
+							padding, и border не расширяют блок
+					</span></li>
+				</ol>
+			</div>
+
+			<p>
+				Свойство <span class='code_line'><span class='styles italic'>box-sizing</span></span> лучше задавать в
+				селекторе <span class="code_line"><span class="selector">*</span></span> - который задает свойства для всех
+				HTML элементов страницы.
+			</p>
+
+			<p>Пример</p>
+			<p>Для обоих блоков высота и ширина были заданы одинаковые <span class='code_line'><span
+						class='styles italic'>height</span>:<span class='styles'>100px; и <span
+							class='styles italic'>width</span>: 200px;</span></span> также был задан <span
+						class="code_line"><span class='styles italic'>padding</span>: <span class="styles">20px</span>;</span> для обоих
+				блоков.</p>
+				<img src="../projects/images/css_6_1.png" alt="">
+
+			<p>Как можем увидеть, хоть их CSS свойства были одинаковы, кроме свойства <span class='code_line'><span
+						class='styles italic'>box-sizing</span></span>, это очень сильно увеличивает разницу. Поэтому
+				всегда перед заданием CSS свойств для элементов. Задайте свойство <span class="code_line"><span
+						class="styles italic">box-sizing</span>: <span class="styles">border-box</span>;</span> для всех
+				элементов.</p>
+
+
+				<p>Ограничение высоты и ширины</p>
+
+				<p>Существуют максимальные и минимальные значения ширины и высоты, они позволяют сделать так чтобы блок сужался или расширялся до определенного размера, также и по высоте блок может становится длиннее или короче какого-то значения.  </p>
+				<p>Свойство <span class="code_line"><span class="styles italic">min-width</span></span> устанавливает минимальную ширину элемента. Значением свойства служат любые единицы для размеров либо ключевое слово none, означающее отсутствие значения.</p>
+				<p>Обычно задается для элемента с плавающей шириной (ширина задана в процентах или не задана вообще, а элемент по ширине раздвигается своим содержимым). Если ширина элемента задана в процентах - при уменьшении окна браузера она будет уменьшаться, пока не достигнет значения <span class="code_line"><span class="styles italic">min-width</span></span>.</p>
+				<p><span class="code_line"><span class="styles italic">max-width</span></span> – устанавливает максимальную ширину элемента, т.е при расширении окна браузера ваш бок будет становится шире пока не дойдет до максимального значения</p>
+				<p><span class="code_line"><span class="styles italic">min-height</span></span> – устанавливает минимальную высоту элемента </p>
+				<p><span class="code_line"><span class="styles italic">max-height</span></span> – устанавливает максимальную высоту элемента </p>
+				<p>Значения для свойств, задаются в пикселях, с помощью этих свойств создаются резиновые блоки или сайты. </p>
+				
+				<p class="accent">Практика</p>
+				<p class="accent">Задание 1</p>
+				<p>Повторите по заданному образцу</p>
+				<img src="../projects/images/css_6_1.png" alt="">
+				<p class="accent">Задание 2</p>
+				<p>При сужении или расширении окна браузера блок также должен сужаться или расширяться, задайте максимальную ширину 800px и минимальную ширину 300px</p>
+				<img src="../projects/images/css_6_1.png" alt="">
+
+		</article>
+	</div>
+</section>
+</body></html>

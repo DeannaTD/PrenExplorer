@@ -1,0 +1,746 @@
+<section class="project-container">
+    <div class="project-container__logo">
+        <img src="" alt="Logo" srcset="">
+    </div>
+    
+    <p class="project-name">Урок 30. Руководство по PyQt5</p>
+    <div class="description-block">
+	    <article class="description-block__text">
+          <p>Продолжим знакомство с PyQt5.</p>
+          <p>На прошлом уроке мы создавали шаблон Main Window.</p>
+          <p>Разбе рем какие еще бывают шаблоны.</p>
+          <p>Существует пять видов доступных шаблонов:</p>
+          <p>&bull;  <b>Диалоговое окно с кнопками внизу</b> (Dialog with Buttons Bottom): создает форму с кнопками ОК и Cancel в правом нижнем углу формы.</p>
+          <p>&bull;  <b>Диалоговое окно с кнопками справа</b> (Dialog with Buttons Right): создает форму с кнопками OK и Cancel в верхнем правом углу формы.</p>
+          <p>&bull;  <b>Диалоговое окно без кнопок</b> (Dialog without Buttons): создает пустую форму;</p>
+          <p>&bull;  <b>Главное окно</b> (Main Window): создает окно с панелью меню и набором инструментов. Унаследовано из QmainWindow;</p>
+          <p>&bull;  <b>Виджет</b> (Widget): создает виджет, наследуемый из класса Qwidget. Отличается от диалоговых шаблонов тем, что они наследуются из класса QВialog</p>
+          <p>Итак, у нас есть три типа шаблонов. В чем между ними разница?</p>
+          <p><b>Разница между QDialog, QMainWindow, и Qwidget</b></p>
+          <p>&bull;  <b>QWidget –</b> это базовый класс для всех GUI Элементов в PyQt5;</p>
+          <p>&bull;  <b>QDialog</b> используется при запросе чего-либо у пользователя, например, запросы о принятии или отклонении чего-нибудь. Основан на Qwidget.</p>
+          <p>&bull;  <b>QMainWindow –</b> самый большой шаблон, где вы можете разместить вашу панель инструментов, меню, статус и другие виджеты. Не имеет встроенных кнопок разрешения, таких как в QDialog.</p>
+          <p>Теперь разберем <b>виджеты PyQt</b></p>
+          <p><b>Виджет QLabel</b></p>
+          <p>Для внесение виджета <b>QLabel</b> в вашу форму, перетяните виджет ярлыка из бокса слева;</p>
+          <img class="project_image" src="../projects/python_image/project30_1.png">
+          <p>Сохраните файл и конвертируйте его в python файл. Теперь поработаем с ярлыком виджета при помощи кода.</p>
+          <p><b>Меняем шрифт QLabel</b></p>
+          <p>Чтобы <b>поменять шрифт QLabel</b>, используйте метод <b>setFont()</b> и передайте ему <b>QFont</b> следующим образом:</p>
+          <p> from PyQt5 import QtWidgets, QtGui</p>
+          <p>from mydesign import Ui_MainWindow</p>
+          <p>import sys</p>
+          <p> </p>
+          <p>class mywindow(QtWidgets.QMainWindow):</p>
+          <p> </p>
+          <p>&emsp;    def __init__(self):</p>
+          <p>&emsp;&emsp;        super(mywindow, self).__init__()</p>
+          <p>&emsp;&emsp;        self.ui = Ui_MainWindow()</p>
+          <p>&emsp;&emsp;        self.ui.setupUi(self)</p>
+          <p>        </p>
+          <p>&emsp;&emsp;        self.ui.label.setFont(</p>
+          <p>&emsp;&emsp;&emsp;            QtGui.QFont('SansSerif', 30)</p>
+          <p>&emsp;&emsp;        ) # Изменение шрифта и размера</p>
+          <p> </p>
+          <p>app = QtWidgets.QApplication([])</p>
+          <p>application = mywindow()</p>
+          <p>application.show()</p>
+          <p> </p>
+          <p>sys.exit(app.exec())</p>
+          <p> </p>
+          <p>После того, как запустите этот код, обратите внимание на то, что ярлык возникает некорректно, так как размер — меньше, чем размер шрифта, который мы используем. Так что нам нужно установить размер ярлыка.</p>
+          <p><b>Меняем размер QLabel</b></p>
+          <p>Чтобы поменять размер QLabel, вам нужно указать его геометрию при помощи метода setGeometry(), вот так: </p>
+          <p> from PyQt5 import QtWidgets, QtGui,QtCore</p>
+          <p>from mydesign import Ui_MainWindow</p>
+          <p>import sys</p>
+          <p> </p>
+          <p>class mywindow(QtWidgets.QMainWindow):</p>
+          <p> </p>
+          <p>&emsp;    def __init__(self):</p>
+          <p>&emsp;&emsp;        super(mywindow, self).__init__()</p>
+          <p>&emsp;&emsp;        self.ui = Ui_MainWindow()</p>
+          <p>&emsp;&emsp;        self.ui.setupUi(self)</p>
+          <p>        </p>
+          <p>&emsp;&emsp;        self.ui.label.setFont(</p>
+          <p>&emsp;&emsp;&emsp;            QtGui.QFont('SansSerif', 30)</p>
+          <p>&emsp;&emsp;        )</p>
+          <p> </p>
+          <p> &emsp;&emsp;       self.ui.label.setGeometry(</p>
+          <p>&emsp;&emsp;&emsp;            QtCore.QRect(10, 10, 200, 200)</p>
+          <p>&emsp;&emsp;        ) # изменить геометрию ярлыка</p>
+          <p> </p>
+          <p> </p>
+          <p>app = QtWidgets.QApplication([])</p>
+          <p>application = mywindow()</p>
+          <p>application.show()</p>
+          <p> </p>
+          <p>sys.exit(app.exec())</p>
+          <img class="project_image" src="../projects/python_image/project30_2.png">
+          <p><b>Меняем текст в QLabel</b></p>
+          <p>Чтобы изменить <b>текст в QLabel</b>, вы можете использовать метод <b>setText()</b>, вот так: </p>
+          <p> from PyQt5 import QtWidgets, QtGui,QtCore</p>
+          <p>from qlabel import Ui_MainWindow</p>
+          <p>import sys</p>
+          <p> </p>
+          <p>class mywindow(QtWidgets.QMainWindow):</p>
+          <p> </p>
+          <p>&emsp;    def __init__(self):</p>
+          <p>&emsp;&emsp;        super(mywindow, self).__init__()</p>
+          <p>&emsp;&emsp;        self.ui = Ui_MainWindow()</p>
+          <p>&emsp;&emsp;        self.ui.setupUi(self)</p>
+          <p>        </p>
+          <p>&emsp;&emsp;        self.ui.label.setFont(</p>
+          <p>&emsp;&emsp;&emsp;            QtGui.QFont('SansSerif', 30)</p>
+          <p>&emsp;&emsp;        )</p>
+          <p>        </p>
+          <p>&emsp;&emsp;        self.ui.label.setGeometry(</p>
+          <p>&emsp;&emsp;&emsp;            QtCore.QRect(10, 10, 200, 200)</p>
+          <p> &emsp;&emsp;       )</p>
+          <p>        </p>
+          <p>&emsp;&emsp;        self.ui.label.setText("PyScripts") # Меняем текст</p>
+          <p> </p>
+          <p> </p>
+          <p>app = QtWidgets.QApplication([])</p>
+          <p>application = mywindow()</p>
+          <p>application.show()</p>
+          <p> </p>
+          <p>sys.exit(app.exec())</p>
+          <img class="project_image" src="../projects/python_image/project30_3.png">
+          <p>Именно на столько все просто! Давайте рассмотрим другие виджеты.</p>
+          <p><b>Виджет QLineEdit</b></p>
+          <p>Виджет QLineEdit – это редактируемое поле, где вы можете принимать данные от пользователя. <b>LineEdit</b> содержит множество методов, с которыми можно работать.</p>
+          <p>Создадим новый дизайн <b>qline.ui</b>, и внесем шесть виджетов <b>QLineEdit</b> и экспортируем его в файл <b>qline.py.</b></p>
+          <p>Давайте познакомимся с методами <b></b>:</p>
+          <p> from PyQt5 import QtWidgets, QtCore</p>
+          <p># Импортируем наш файл</p>
+          <p>from qline import Ui_MainWindow</p>
+          <p>import sys</p>
+          <p> </p>
+          <p> </p>
+          <p>class mywindow(QtWidgets.QMainWindow):</p>
+          <p>&emsp;    def __init__(self):</p>
+          <p>&emsp;&emsp;        super(mywindow, self).__init__()</p>
+          <p>&emsp;&emsp;        self.ui = Ui_MainWindow()</p>
+          <p>&emsp;&emsp;        self.ui.setupUi(self)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        # Меняем текст</p>
+          <p>&emsp;&emsp;        self.ui.lineEdit.setText("Добро пожаловать на PythonScripts")</p>
+          <p> </p>
+          <p>&emsp;&emsp;        # указать максимальную длину</p>
+          <p>&emsp;&emsp;        self.ui.lineEdit_2.setMaxLength(10)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        # ввод пароля</p>
+          <p>&emsp;&emsp;        self.ui.lineEdit_3.setEchoMode(QtWidgets.QLineEdit.Password)</p>
+          <p>&emsp;&emsp;        # только чтение без изменения содержимого.</p>
+          <p>&emsp;&emsp;        self.ui.lineEdit_4.setReadOnly(True)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        # меняем цвет вводимого текста</p>
+          <p>&emsp;&emsp;        self.ui.lineEdit_5.setStyleSheet("color: rgb(28, 43, 255);")</p>
+          <p> </p>
+          <p>&emsp;&emsp;        # изменение цвета фона QLineEdit</p>
+          <p>&emsp;&emsp;        self.ui.lineEdit_6.setStyleSheet("background-color: rgb(28, 43, 255);")</p>
+          <p> </p>
+          <p> </p>
+          <p>app = QtWidgets.QApplication([])</p>
+          <p>application = mywindow()</p>
+          <p>application.show()</p>
+          <p> </p>
+          <p>sys.exit(app.exec())</p>
+          <p>Результат:</p>
+          <img class="project_image" src="../projects/python_image/project30_4.png">
+          <p>&bull;  Для 1-го QLineEdit, мы изменили текст, при помощи метода <b>setText()</b>.</p>
+          <p>&bull;  Для 2-го QLineEdit, мы установили максимум доступных 10-и символов, так что более 10-и приниматься не будут.</p>
+          <p>&bull;  Для 3-го QLineEdit, мы установили режим пароля, так ваши введенные данные отображаются как звездочки;</p>
+          <p>&bull;  Для 4-го QLineEdit, мы установили режим «<b>только для чтения</b>», так что редактировать контент не представляется возможным.</p>
+          <p>&bull;  Для 5-го QLineEdit мы изменили цвет шрифта при помощи метода <b>setStyleSheet()</b> и указали нужный цвет с помощью CSS (как и для обычной веб страницы).</p>
+          <p>&bull;  Для 6-го QLineEdit мы изменили цвет фона при помощи метода <b>setStyleSheet()</b> и CSS.</p>
+          <p><b>Метод setStyleSheet()</b></p>
+          <p>Метод setStyleSheet() может быть использован с виджетами PyQt5 для изменения стилей.</p>
+          <p>Вы можете изменить следующие параметры, пользуясь методом <b>setStyleSheet()</b>:</p>
+          <p>&bull;  Размер и тип шрифта;</p>
+          <p>&bull;  Цвет текста;</p>
+          <p>&bull;  Цвет заднего фона;</p>
+          <p>&bull;  Цвет верхней границы;</p>
+          <p>&bull;  Цвет нижней границы;</p>
+          <p>&bull;  Цвет левой границы;</p>
+          <p>&bull;  Цвет правой границы;</p>
+          <p>&bull;  Цвет выделения;</p>
+          <p>&bull;  Цвет выделения заднего фона.</p>
+          <p>Это наиболее важные значения, которые можно передать методу setStyleSheet().</p>
+          <p><b>Виджет QPushButton</b></p>
+          <p>Большая часть ваших программ Python будут содержать виджет <b>QPushButton</b>. Вы нажимаете кнопку, и какой-нибудь код выполняется.</p>
+          <p>Так что при нажатии на <b>QPushButton</b>, сигнал издается. Названием сигнала в данном случае, является <b>clicked()</b>.</p>
+          <p>Чтобы связать сигнал со слотом, вам нужно использовать метод <b>connect()</b>, что вы сейчас и увидите.</p>
+          <p>Этот процесс обработки события продолжает работать до тех пор, пока вы не закроете вашу форму, или главный виджет.</p>
+          <p>Давайте создадим форму myform.ui при помощи QLabel и <b></b><b>myform.py</b>.</p>
+          <p>Сейчас, мы подключим сигнал <b>clicked()</b> к слоту при помощи метода connect(), вот так:</p>
+          <p> self.ui.pushButton.clicked.connect(self.btnClicked)</p>
+          <p>Здесь, <b>btnClicked</b> – это слот, или функция, которая будет выполнена после того, как вы кликните на <b>QPushButton.</b></p>
+          <p>Итак, ваш код будет выглядеть следующим образом:</p>
+          <p> from PyQt5 import QtWidgets</p>
+          <p> </p>
+          <p># Импортируем наш шаблон.</p>
+          <p>from myform import Ui_MainWindow</p>
+          <p>import sys</p>
+          <p> </p>
+          <p> </p>
+          <p>class mywindow(QtWidgets.QMainWindow):</p>
+          <p>&emsp;    def __init__(self):</p>
+          <p>&emsp;&emsp;        super(mywindow, self).__init__()</p>
+          <p>&emsp;&emsp;        self.ui = Ui_MainWindow()</p>
+          <p>&emsp;&emsp;        self.ui.setupUi(self)</p>
+          <p>&emsp;&emsp;        # подключение клик-сигнал к слоту btnClicked</p>
+          <p>&emsp;&emsp;         self.ui.pushButton.clicked.connect(self.btnClicked)</p>
+          <p> </p>
+          <p>&emsp;    def btnClicked(self):</p>
+          <p>&emsp;&emsp;        self.ui.label.setText("Вы нажали на кнопку!")</p>
+          <p>&emsp;&emsp;        # Если не использовать, то часть текста исчезнет.</p>
+          <p>&emsp;&emsp;        self.ui.label.adjustSize()</p>
+          <p> </p>
+          <p> </p>
+          <p>app = QtWidgets.QApplication([])</p>
+          <p>application = mywindow()</p>
+          <p>application.show()</p>
+          <p> </p>
+          <p>sys.exit(app.exec())</p>
+          <p>Результат:</p>
+          <img class="project_image" src="../projects/python_image/project30_5.png">
+          <p>Замечательно!</p>
+          <p></p>
+          <p><b>Визуальный редактор слота/сигнала</b></p>
+          <p>Мы видели, как подключать сигнал виджета к слоту при помощи метода <b>connect()</b>, но это не единственный способ.</p>
+          <p>На самом деле, для каждого виджета есть предопределенные слоты. Вы можете связать сигнал с любым предопределенным слотом, без необходимости кодить в дизайнере PyQt5.</p>
+          <p>Перетяните <b>QPushButton</b> и <b>QLineEdit</b> в вашу форму.</p>
+          <p>Нажмите F4 и перетяните курсор из QPushButton и отпустите его в верхней части QLineEdit. Чтобы вернуться в обычный режим, нажмите на F3.</p>
+          <p>Благодаря этому появится редактор сигнала/слота.</p>
+          <img class="project_image" src="../projects/python_image/project30_6.png">
+          <p>Слева находятся предопределенные сигналы, справа — предопределенные слоты. Скажем, нам нужно подключить сигнал clicked() с слотом «очистки содержимого«.</p>
+          <p>Выберите сигнал <b>clicked</b> слева и выберите <b>clear слот</b> справа и нажмите OK.</p>
+          <img class="project_image" src="../projects/python_image/project30_7.png">
+          <p>После выполнения подключений ваших сигналов и слотов, вы можете выйти из этого режима, нажав ESC, или F3.</p>
+          <p>Сейчас, если вы запустите эту форму, и нажмете <b>QPushButton</b>, то любой текст в <b>QLineEdit</b> будет очищен. Вы можете редактировать или удалять эти связи в панели редактора сигналов и слотов.</p>
+          <p>Сохраните форму как <b>signaledit.ui</b> и конвертируем её в <b>signaledit.py</b>:</p>
+          <p>Полученный файл импортируем в наш код:</p>
+          <p> from PyQt5 import QtWidgets</p>
+          <p> </p>
+          <p># Импортируем наш шаблон.</p>
+          <p>from signaledit import Ui_MainWindow</p>
+          <p> </p>
+          <p>import sys</p>
+          <p> </p>
+          <p> </p>
+          <p>class mywindow(QtWidgets.QMainWindow):</p>
+          <p>&emsp;    def __init__(self):</p>
+          <p>&emsp;&emsp;        super(mywindow, self).__init__()</p>
+          <p>&emsp;&emsp;        self.ui = Ui_MainWindow()</p>
+          <p>&emsp;&emsp;        self.ui.setupUi(self)</p>
+          <p> </p>
+          <p> </p>
+          <p>app = QtWidgets.QApplication([])</p>
+          <p>application = mywindow()</p>
+          <p>application.show()</p>
+          <p> </p>
+          <p>sys.exit(app.exec())</p>
+          <p><b>Виджет QComboBox</b></p>
+          <p>Вместо того, чтобы разрешить пользователю вводить свои данные в QLineEdit, или любом другом редактируемом виджете, мы можем использовать <b>виджет QComboBox</b>, чтобы дать список данных, из которого он сможет выбирать.</p>
+          <p>Давайте перетянем <b>QComboBox</b> в нашу форму и взглянем на её методы.</p>
+          <img class="project_image" src="../projects/python_image/project30_8.png">
+          <p>Сохраняем файл как <b>combobox.ui</b> и конвертируем его в <b>combobox.py</b></p>
+          <p>Если вы запустите приложение сейчас, обратите внимание на то, что QComboBox — пустой. Чтобы вносить объекты в <b>QComboBox</b>, используйте метод <b>addItem()</b>:</p>
+          <p> from PyQt5 import QtWidgets</p>
+          <p>from combobox import Ui_MainWindow</p>
+          <p>import sys</p>
+          <p> </p>
+          <p> </p>
+          <p>class mywindow(QtWidgets.QMainWindow):</p>
+          <p>&emsp;    def __init__(self):</p>
+          <p>&emsp;&emsp;        super(mywindow, self).__init__()</p>
+          <p>&emsp;&emsp;        self.ui = Ui_MainWindow()</p>
+          <p>&emsp;&emsp;        self.ui.setupUi(self)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        # Добавляем новые значения</p>
+          <p>&emsp;&emsp;        self.ui.comboBox.addItem("Программист")</p>
+          <p>&emsp;&emsp;        self.ui.comboBox.addItem("Дизайнер")</p>
+          <p> </p>
+          <p> </p>
+          <p>app = QtWidgets.QApplication([])</p>
+          <p>application = mywindow()</p>
+          <p>application.show()</p>
+          <p> </p>
+          <p>sys.exit(app.exec())</p>
+          <p><b>Получаем все элементы из QComboBox</b></p>
+          <p>Нет прямого способа получить все значения из QComboBox, но вы можете применить цикл Python для этой цели. Для этого подойдет функция range.</p>
+          <p> for i in range(self.ui.comboBox.count()):</p>
+          <p>&emsp;    print(self.ui.comboBox.itemText(i))</p>
+          <p><b>Выбор одного элемента из QCombobox</b></p>
+          <p>Чтобы выбрать элемент из <b>QComboBox</b>, у вас есть два метода:</p>
+          <p> # по индексу, который начинается с нуля</p>
+          <p>self.ui.comboBox.setCurrentIndex(1)</p>
+          <p> </p>
+          <p>#выбор по тексту</p>
+          <p>self.ui.comboBox.setCurrentText("Second item")</p>
+          <p>Обратите внимание на то, что при <b>выборе элемента по тексту</b>, следует убедиться в том, что вы вводите правильный текст. В противном случае, QComboBox останется на первом элементе.</p>
+          <p><b>QTableWidget</b></p>
+          <p>Если вы хотите просмотреть вашу базу данных в формате таблицы, в PyQt5 предоставляется <b>QTableWidget</b> как раз для этой цели.</p>
+          <p><b>QTableWidget</b> состоит из клеток, каждая клетка — экземпляр класса <b>QTableWidgetItem</b>.</p>
+          <p>Давайте создадим форму, которая содержит <b>QTableWidget</b> и <b>QPushButton</b>.</p>
+          <p>Перетяните QTableWidget и QPushButton из PyQt5 Designer. После этого, сохраните форму как <b>qtable.ui</b> и конвертируйте дизайн в <b>qtable.py</b>.</p>
+          <p>Чтобы добавлять ряды в <b>QTableWidget</b>, вы можете использовать метод <b>setRowCount()</b>.</p>
+          <p>Для внесения столбцов в <b>QTableWidget</b>, воспользуйтесь методом <b>setColumnCount()</b>.</p>
+          <p> from PyQt5 import QtWidgets</p>
+          <p> </p>
+          <p># Импортируем нашу форму.</p>
+          <p>from qtable import Ui_MainWindow</p>
+          <p>import sys</p>
+          <p> </p>
+          <p> </p>
+          <p>class mywindow(QtWidgets.QMainWindow):</p>
+          <p>&emsp;    def __init__(self):</p>
+          <p>&emsp;&emsp;        super(mywindow, self).__init__()</p>
+          <p>&emsp;&emsp;        self.ui = Ui_MainWindow()</p>
+          <p>&emsp;&emsp;        self.ui.setupUi(self)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setColumnCount(2)</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setRowCount(4)</p>
+          <p> </p>
+          <p> </p>
+          <p>app = QtWidgets.QApplication([])</p>
+          <p>application = mywindow()</p>
+          <p>application.show()</p>
+          <p> </p>
+          <p>sys.exit(app.exec())</p>
+          <img class="project_image" src="../projects/python_image/project30_9.png">
+          <p>Теперь вы можете писать текст вручную внутри клеток <b>QTableWidget</b>.</p>
+          <p><b>Очистка содержимого QTableWidget</b></p>
+          <p>Чтобы очистить содержимое <b>QTableWidget</b>, вы можете использовать метод clear, вот так:</p>
+          <p> from PyQt5 import QtWidgets</p>
+          <p> </p>
+          <p># Импортируем нашу форму.</p>
+          <p>from qtable import Ui_MainWindow</p>
+          <p>import sys</p>
+          <p> </p>
+          <p> </p>
+          <p>class mywindow(QtWidgets.QMainWindow):</p>
+          <p>&emsp;    def __init__(self):</p>
+          <p>&emsp;&emsp;        super(mywindow, self).__init__()</p>
+          <p>&emsp;&emsp;        self.ui = Ui_MainWindow()</p>
+          <p>&emsp;&emsp;        self.ui.setupUi(self)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setColumnCount(2)</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setRowCount(4)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        # очистка таблицы при клике на кнопку.</p>
+          <p>&emsp;&emsp;        self.ui.pushButton.clicked.connect(self.clear)</p>
+          <p> </p>
+          <p>&emsp;    def clear(self):</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.clear()</p>
+          <p> </p>
+          <p> </p>
+          <p>app = QtWidgets.QApplication([])</p>
+          <p>application = mywindow()</p>
+          <p>application.show()</p>
+          <p> </p>
+          <p>sys.exit(app.exec())</p>
+          <p><b>Заполнение QTableWidget из кода</b></p>
+          <p>Чтобы заполнить QtableWidget программно, вам нужно использовать метод setItem() для каждого объекта QtableWidgetItem.</p>
+          <p> from PyQt5.QtWidgets import QTableWidgetItem</p>
+          <p> </p>
+          <p>from qtable import *</p>
+          <p>import sys</p>
+          <p> </p>
+          <p>data = []</p>
+          <p>data.append(('Заполнить', 'QTableWidget'))</p>
+          <p>data.append(('с данными', 'в Python'))</p>
+          <p>data.append(('очень', 'просто'))</p>
+          <p> </p>
+          <p> </p>
+          <p>class mywindow(QtWidgets.QMainWindow):</p>
+          <p> </p>
+          <p>&emsp;    def __init__(self):</p>
+          <p>&emsp;&emsp;        super().__init__()</p>
+          <p>&emsp;&emsp;        self.ui = Ui_MainWindow()</p>
+          <p> </p>
+          <p>&emsp;&emsp;        self.ui.setupUi(self)</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setRowCount(3)</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setColumnCount(2)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        # очистка таблицы при клике на кнопку.</p>
+          <p>&emsp;&emsp;        self.ui.pushButton.clicked.connect(self.clear)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        row = 0</p>
+          <p>&emsp;&emsp;        for tup in data:</p>
+          <p>&emsp;&emsp;&emsp;            col = 0</p>
+          <p> </p>
+          <p>&emsp;&emsp;&emsp;            for item in tup:</p>
+          <p>&emsp;&emsp;&emsp;&emsp;                cellinfo = QTableWidgetItem(item)</p>
+          <p>&emsp;&emsp;&emsp;&emsp;                self.ui.tableWidget.setItem(row, col, cellinfo)</p>
+          <p>&emsp;&emsp;&emsp;&emsp;                col += 1</p>
+          <p> </p>
+          <p>&emsp;&emsp;&emsp;            row += 1</p>
+          <p> </p>
+          <p>&emsp;    def clear(self):</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.clear()</p>
+          <p> </p>
+          <p> </p>
+          <p>app = QtWidgets.QApplication([])</p>
+          <p>win = mywindow()</p>
+          <p>win.show()</p>
+          <p> </p>
+          <p>sys.exit(app.exec())</p>
+          <img class="project_image" src="../projects/python_image/project30_10.png">
+          <p>&bull;  Сначала мы создали список трех кортежей Python;</p>
+          <p>&bull;  Внутри конструктора главного окна, мы установили количество столбцов и рядов;</p>
+          <p>&bull;  Далее мы перебираем список и получаем каждый кортеж в списке, для заполнения клеток таблицы, при помощи метода <b>setItem()</b></p>
+          <p>&bull;  Наконец, мы показываем главное окно.</p>
+          <p><b>Делаем QTableWidget нередактируемым (только для чтения)</b></p>
+          <p>Вам может не понравится то, что клетки в вашей таблице могут быть отредактированы пользователем в том или ином случае. Например, при отображении нередактируемых данных. В этом случае возможность редактирования не имеет никакого смысла.</p>
+          <p>Чтобы сделать <b>QTableWidget</b> нередактируемым, вы можете использовать метод <b>setFlags()</b>, чтобы сделать каждый <b>QTableWidgetItem</b> доступным только для чтения.</p>
+          <p> # Только для чтения</p>
+          <p>cellinfo.setFlags(</p>
+          <p>&emsp;    QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled</p>
+          <p>)</p>
+          <p>Вам нужно установить флажки, перед тем как настраивать содержимое вашей клетки.</p>
+          <p>Таким образом, ваш код будет выглядеть вот так:</p>
+          <p> from PyQt5.QtWidgets import QTableWidgetItem</p>
+          <p> </p>
+          <p>from qtable import *</p>
+          <p>import sys</p>
+          <p> </p>
+          <p>data = []</p>
+          <p>data.append(('Заполнить', 'QTableWidget'))</p>
+          <p>data.append(('с данными', 'в Python'))</p>
+          <p>data.append(('очень', 'просто'))</p>
+          <p> </p>
+          <p> </p>
+          <p>class mywindow(QtWidgets.QMainWindow):</p>
+          <p> </p>
+          <p>&emsp;    def __init__(self):</p>
+          <p>&emsp;&emsp;        super().__init__()</p>
+          <p>&emsp;&emsp;        self.ui = Ui_MainWindow()</p>
+          <p> </p>
+          <p>&emsp;&emsp;        self.ui.setupUi(self)</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setRowCount(3)</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setColumnCount(2)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        # очистка таблицы при клике на кнопку.</p>
+          <p>&emsp;&emsp;        self.ui.pushButton.clicked.connect(self.clear)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        row = 0</p>
+          <p>&emsp;&emsp;        for tup in data:</p>
+          <p>&emsp;&emsp;            col = 0</p>
+          <p> </p>
+          <p>&emsp;&emsp;            for item in tup:</p>
+          <p>&emsp;&emsp;&emsp;                cellinfo = QTableWidgetItem(item)</p>
+          <p> </p>
+          <p>&emsp;&emsp;&emsp;                # Только для чтения</p>
+          <p>&emsp;&emsp;&emsp;                cellinfo.setFlags(</p>
+          <p>&emsp;&emsp;&emsp;&emsp;                    QtCore.Qt.ItemIsSelectable | QtCore.Qt.ItemIsEnabled</p>
+          <p>&emsp;&emsp;&emsp;                )</p>
+          <p> </p>
+          <p>&emsp;&emsp;&emsp;                self.ui.tableWidget.setItem(row, col, cellinfo)</p>
+          <p>&emsp;&emsp;&emsp;                col += 1</p>
+          <p> </p>
+          <p>&emsp;&emsp;            row += 1</p>
+          <p> </p>
+          <p>&emsp;    def clear(self):</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.clear()</p>
+          <p> </p>
+          <p> </p>
+          <p>app = QtWidgets.QApplication([])</p>
+          <p>win = mywindow()</p>
+          <p>win.show()</p>
+          <p> </p>
+          <p>sys.exit(app.exec())</p>
+          <p>Теперь, если вы попробуете отредактировать какую-либо клетку — у вас не выйдет, так как QtableWidgetItem теперь нельзя редактировать</p>
+          <p><b>Заголовок для столбцов в QTableWidget</b></p>
+          <p>До этого момента, названия столбцов <b>QTableWidget</b> были числами. Как на счет того, чтобы поменять названия столбцов на что-нибудь другое?</p>
+          <p>Чтобы задать текст заголовкам <b>QTableWidget</b>, вы можете использовать метод <b>setHorizontalHeaderLabels()</b>, вот так:</p>
+          <p> from PyQt5.QtWidgets import QTableWidgetItem</p>
+          <p>from qtable import *</p>
+          <p>import sys</p>
+          <p> </p>
+          <p>data = []</p>
+          <p>data.append(('BMW', '1991'))</p>
+          <p>data.append(('Audi', '2003'))</p>
+          <p>data.append(('Volvo', '2010'))</p>
+          <p> </p>
+          <p> </p>
+          <p>class mywindow(QtWidgets.QMainWindow):</p>
+          <p> </p>
+          <p>&emsp;    def __init__(self):</p>
+          <p>&emsp;&emsp;        super().__init__()</p>
+          <p>&emsp;&emsp;        self.ui = Ui_MainWindow()</p>
+          <p> </p>
+          <p>&emsp;&emsp;        self.ui.setupUi(self)</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setRowCount(3)</p>
+          <p>&emsp;&emsp;
+                  self.ui.tableWidget.setColumnCount(2)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        # очистка таблицы при клике на кнопку.</p>
+          <p>&emsp;&emsp;        self.ui.pushButton.clicked.connect(self.clear)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        # заголовки для столбцов.</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setHorizontalHeaderLabels(</p>
+          <p>&emsp;&emsp;&emsp;            ('Марка', 'Год выпуска')</p>
+          <p>&emsp;&emsp;        )</p>
+          <p> </p>
+          <p>&emsp;&emsp;        row = 0</p>
+          <p>&emsp;&emsp;        for tup in data:</p>
+          <p>&emsp;&emsp;&emsp;            col = 0</p>
+          <p> </p>
+          <p>&emsp;&emsp;&emsp;            for item in tup:</p>
+          <p>&emsp;&emsp;&emsp;&emsp;                cellinfo = QTableWidgetItem(item)</p>
+          <p>&emsp;&emsp;&emsp;&emsp;                self.ui.tableWidget.setItem(row, col, cellinfo)</p>
+          <p>&emsp;&emsp;&emsp;&emsp;                col += 1</p>
+          <p> </p>
+          <p>&emsp;&emsp;&emsp;            row += 1</p>
+          <p> </p>
+          <p>&emsp;    def clear(self):</p>
+          <p>        self.ui.tableWidget.clear()</p>
+          <p> </p>
+          <p> </p>
+          <p>app = QtWidgets.QApplication([])</p>
+          <p>win = mywindow()</p>
+          <p>win.show()</p>
+          <p> </p>
+          <p>sys.exit(app.exec())</p>
+          <img class="project_image" src="../projects/python_image/project30_11.png">
+          <p>Таким же образом, вы можете <b>менять заголовок ряда</b>, при помощи метода <b>setVerticalHeaderLabels()</b>:</p>
+          <p> from PyQt5.QtWidgets import QTableWidgetItem</p>
+          <p>from qtable import *</p>
+          <p>import sys</p>
+          <p> </p>
+          <p>data = []</p>
+          <p>data.append(('BMW', '1991'))</p>
+          <p>data.append(('Audi', '2003'))</p>
+          <p>data.append(('Volvo', '2010'))</p>
+          <p> </p>
+          <p> </p>
+          <p>class mywindow(QtWidgets.QMainWindow):</p>
+          <p> </p>
+          <p>&emsp;    def __init__(self):</p>
+          <p>&emsp;&emsp;        super().__init__()</p>
+          <p>&emsp;&emsp;        self.ui = Ui_MainWindow()</p>
+          <p> </p>
+          <p>&emsp;&emsp;        self.ui.setupUi(self)</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setRowCount(3)</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setColumnCount(2)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        # очистка таблицы при клике на кнопку.</p>
+          <p>&emsp;&emsp;        self.ui.pushButton.clicked.connect(self.clear)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        # заголовки для столбцов.</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setHorizontalHeaderLabels(</p>
+          <p>&emsp;&emsp;&emsp;            ('Марка', 'Год выпуска')</p>
+          <p>&emsp;&emsp;        )</p>
+          <p> </p>
+          <p>&emsp;&emsp;        # названия рядов.</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setVerticalHeaderLabels(</p>
+          <p>&emsp;&emsp;&emsp;            ('900$', '5000$', '13000$')</p>
+          <p> &emsp;&emsp;       )</p>
+          <p> </p>
+          <p>&emsp;&emsp;        row = 0</p>
+          <p>&emsp;&emsp;        for tup in data:</p>
+          <p>&emsp;&emsp;&emsp;            col = 0</p>
+          <p> </p>
+          <p>&emsp;&emsp;&emsp;            for item in tup:</p>
+          <p>&emsp;&emsp;&emsp;&emsp;                cellinfo = QTableWidgetItem(item)</p>
+          <p>&emsp;&emsp;&emsp;&emsp;                self.ui.tableWidget.setItem(row, col, cellinfo)</p>
+          <p>&emsp;&emsp;&emsp;&emsp;                col += 1</p>
+          <p> </p>
+          <p>&emsp;&emsp;&emsp;            row += 1</p>
+          <p> </p>
+          <p>&emsp;    def clear(self):</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.clear()</p>
+          <p> </p>
+          <p> </p>
+          <p>app = QtWidgets.QApplication([])</p>
+          <p>win = mywindow()</p>
+          <p>win.show()</p>
+          <p> </p>
+          <p>sys.exit(app.exec())</p>
+          <p><b>Как сортировать QTableWidget</b></p>
+          <p>Вы можете сделать ваш QTableWidget сортируемым, при помощи метода <b>setSortingEnabled()</b>.</p>
+          <p> self.ui.tableWidget.setSortingEnabled(True)</p>
+          <p>Теперь, если пользователь нажмет на любой заголовок столбца, он может сортировать данные в порядке убывания, или возрастания.</p>
+          <p>Вы можете использовать этот метод перед, или до наполнения <b>QTableWidget данными</b>.</p>
+          <p>Что на счет сортировки в QTableWidget, но только для определенного столбца?</p>
+          <p>Вы можете использовать метод <b>sortByColumn()</b>, и указать индекс столбца и порядок сортировки, вот так:</p>
+          <p> from PyQt5.QtWidgets import QTableWidgetItem</p>
+          <p>from qtable import *</p>
+          <p>import sys</p>
+          <p> </p>
+          <p>data = []</p>
+          <p>data.append(('BMW', '2005'))</p>
+          <p>data.append(('Audi', '2003'))</p>
+          <p>data.append(('Volvo', '1990'))</p>
+          <p>data.append(('Toyota', '2018'))</p>
+          <p> </p>
+          <p> </p>
+          <p>class mywindow(QtWidgets.QMainWindow):</p>
+          <p> </p>
+          <p>&emsp;    def __init__(self):</p>
+          <p>&emsp;&emsp;        super().__init__()</p>
+          <p>&emsp;&emsp;        self.ui = Ui_MainWindow()</p>
+          <p> </p>
+          <p>&emsp;&emsp;        self.ui.setupUi(self)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        # Кол-во рядов меняется в зависимости от значений в data.</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setRowCount(</p>
+          <p>&emsp;&emsp;&emsp;            len(data)</p>
+          <p>&emsp;&emsp;        )</p>
+          <p> </p>
+          <p>&emsp;&emsp;        # Кол-во столбцов меняется в зависимости от data.</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setColumnCount(</p>
+          <p>&emsp;&emsp;&emsp;            len(data[0])</p>
+          <p>&emsp;&emsp;        )</p>
+          <p> </p>
+          <p>&emsp;&emsp;        # очистка таблицы при клике на кнопку.</p>
+          <p>&emsp;&emsp;        self.ui.pushButton.clicked.connect(self.clear)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        # заголовки для столбцов.</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setHorizontalHeaderLabels(</p>
+          <p>&emsp;&emsp;&emsp;            ('Марка', 'Год выпуска')</p>
+          <p>&emsp;&emsp;        )</p>
+          <p> </p>
+          <p>&emsp;&emsp;        row = 0</p>
+          <p>&emsp;&emsp;        for tup in data:</p>
+          <p>&emsp;&emsp;&emsp;            col = 0</p>
+          <p> </p>
+          <p>&emsp;&emsp;&emsp;            for item in tup:</p>
+          <p>&emsp;&emsp;&emsp;&emsp;                cellinfo = QTableWidgetItem(item)</p>
+          <p>&emsp;&emsp;&emsp;&emsp;                self.ui.tableWidget.setItem(row, col, cellinfo)</p>
+          <p>&emsp;&emsp;&emsp;&emsp;                col += 1</p>
+          <p> </p>
+          <p>&emsp;&emsp;&emsp;            row += 1</p>
+          <p> </p>
+          <p>&emsp;&emsp;        # Сортировка по году выпуска.</p>
+          <p>&emsp;&emsp;        # 0 - Марка</p>
+          <p>&emsp;&emsp;        # 1 - Год выпуска</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.sortByColumn(</p>
+          <p>&emsp;&emsp;&emsp;            1, QtCore.Qt.AscendingOrder</p>
+          <p>&emsp;&emsp;        )</p>
+          <p> </p>
+          <p>&emsp;    def clear(self):</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.clear()</p>
+          <p> </p>
+          <p> </p>
+          <p>app = QtWidgets.QApplication([])</p>
+          <p>win = mywindow()</p>
+          <p>win.show()</p>
+          <p> </p>
+          <p>sys.exit(app.exec())</p>
+          <p>Кстати, вы можете использовать метод <b>sortItems()</b> для сортировки <b>QTableWidget</b> в возрастающем порядке по умолчанию.</p>
+          <p> self.ui.tableWidget.sortItems(0)</p>
+          <p>Или вы можете определить свой порядок сортировки:</p>
+          <p> self.ui.tableWidget.sortItems(1, QtCore.Qt.DescendingOrder)</p>
+          <p>Помните,что если вы хотите сортировать ваши столбцы программно, вам нужно использовать методы сортировки <b>после заполнения QTableWidget</b> данными, иначе они не будут в нужном вам порядке.</p>
+          <img class="project_image" src="../projects/python_image/project30_12.png">
+          <p><b>Добавляем QComboBox в QTableWidget</b></p>
+          <p>У вас может появится задача, чтобы пользователь выбирал значение внутри <b>QTableWidget</b>, вместо ввода текста.</p>
+          <p>Как на счет того, чтобы добавить <b>QComboBox</b> в <b>QTableWidgetItem</b>?</p>
+          <p>Чтобы добавить <b>QComboBox</b> внутрь <b>QTableWidgetItem,</b> вы можете использовать метод <b>setCellWidget()</b>:</p>
+          <p> from PyQt5.QtWidgets import QTableWidgetItem</p>
+          <p>from qtable import *</p>
+          <p>import sys</p>
+          <p> </p>
+          <p>data = ['Python', 'PHP', 'Java']</p>
+          <p> </p>
+          <p> </p>
+          <p>class mywindow(QtWidgets.QMainWindow):</p>
+          <p>&emsp;    def __init__(self):</p>
+          <p>&emsp;&emsp;        super().__init__()</p>
+          <p>&emsp;&emsp;        self.ui = Ui_MainWindow()</p>
+          <p>&emsp;&emsp;        self.ui.setupUi(self)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setRowCount(3)</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setColumnCount(2)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        row = 0</p>
+          <p>&emsp;&emsp;        for item in data:</p>
+          <p>&emsp;&emsp;&emsp;            cellinfo = QTableWidgetItem(item)</p>
+          <p> </p>
+          <p>&emsp;&emsp;&emsp;            combo = QtWidgets.QComboBox()</p>
+          <p>&emsp;&emsp;&emsp;            combo.addItem("Изучить")</p>
+          <p>&emsp;&emsp;&emsp;            combo.addItem("Забыть")</p>
+          <p>&emsp;&emsp;&emsp;            combo.addItem("Удалить")</p>
+          <p> </p>
+          <p>&emsp;&emsp;&emsp;            self.ui.tableWidget.setItem(row, 0, cellinfo)</p>
+          <p>&emsp;&emsp;&emsp;            self.ui.tableWidget.setCellWidget(row, 1, combo)</p>
+          <p>&emsp;&emsp;&emsp;            row += 1</p>
+          <p> </p>
+          <p> </p>
+          <p>app = QtWidgets.QApplication([])</p>
+          <p>win = mywindow()</p>
+          <p>win.show()</p>
+          <p> </p>
+          <p>sys.exit(app.exec())</p>
+          <img class="project_image" src="../projects/python_image/project30_13.png">
+          <p>Отлично!</p>
+          <p>Не ограничивайте себя в воображении и попробуйте вставлять различные виджеты, такие как QСheckbox, или даже QProgressBar.</p>
+          <p><b>QProgressBar в QTableWidget</b></p>
+          <p> from PyQt5.QtWidgets import QTableWidgetItem</p>
+          <p>from qtable import *</p>
+          <p>import sys</p>
+          <p> </p>
+          <p>data = (</p>
+          <p>&emsp;    ('Python', 95.5),</p>
+          <p>&emsp;    ('PHP', 55.1),</p>
+          <p>&emsp;    ('Java', 0.29)</p>
+          <p>)</p>
+          <p> </p>
+          <p> </p>
+          <p>class mywindow(QtWidgets.QMainWindow):</p>
+          <p>&emsp;    def __init__(self):</p>
+          <p>&emsp;&emsp;        super().__init__()</p>
+          <p>&emsp;&emsp;        self.ui = Ui_MainWindow()</p>
+          <p>&emsp;&emsp;        self.ui.setupUi(self)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setRowCount(3)</p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setColumnCount(2)</p>
+          <p> </p>
+          <p>&emsp;&emsp;        self.ui.tableWidget.setHorizontalHeaderLabels(</p>
+          <p>&emsp;&emsp;&emsp;            ('Язык', 'Знания')</p>
+          <p>&emsp;&emsp;        )</p>
+          <p> </p>
+          <p>&emsp;&emsp;        line = 0</p>
+          <p>&emsp;&emsp;        for item in data:</p>
+          <p>&emsp;&emsp;&emsp;            cellinfo = QTableWidgetItem(item[0])</p>
+          <p>&emsp;&emsp;&emsp;            self.ui.tableWidget.setItem(line, 0, cellinfo)</p>
+          <p> </p>
+          <p>&emsp;&emsp;&emsp;            # Создаем QProgressBar</p>
+          <p>&emsp;&emsp;&emsp;            progress = QtWidgets.QProgressBar()</p>
+          <p>&emsp;&emsp;&emsp;            progress.setMinimum(0)</p>
+          <p>&emsp;&emsp;&emsp;            progress.setMaximum(100)</p>
+          <p> </p>
+          <p>&emsp;&emsp;&emsp;            # Формат вывода: 10.50%</p>
+          <p>&emsp;&emsp;&emsp;            progress.setValue(item[1])</p>
+          <p>&emsp;&emsp;&emsp;            progress.setFormat('{0:.2f}%'.format(item[1]))</p>
+          <p> </p>
+          <p>&emsp;&emsp;&emsp;            # Добавляем виджет в ячейку.</p>
+          <p>&emsp;&emsp;&emsp;            self.ui.tableWidget.setCellWidget(line, 1, progress)</p>
+          <p> </p>
+          <p>&emsp;&emsp;&emsp;            line += 1</p>
+          <p> </p>
+          <p> </p>
+          <p>app = QtWidgets.QApplication([])</p>
+          <p>win = mywindow()</p>
+          <p>win.show()</p>
+          <p> </p>
+          <p>sys.exit(app.exec())</p>
+          <img class="project_image" src="../projects/python_image/project30_14.png">
+          <p>Указанный выше код будет таким же, за исключением строки, где вы создаете QСomboBox, здесь вы внесете тот виджет, который вам нужен.</p>
+          <p>Единственное ограничение — это ваше собственное воображение!</p>
+          <p>Задания:</p>
+          <p>1. Сделайте игру крестики-нолики:</p>
+          <img class="project_image" src="../projects/python_image/project30_15.png">
+          <p>2. Сделать программу Color Mania:</p>
+          <img class="project_image" src="../projects/python_image/project30_16.png">
+
+          </article>
+        <div class="description-block__image">
+            <img src="" alt="" srcset="">
+        </div>
+    </div>
+</section>

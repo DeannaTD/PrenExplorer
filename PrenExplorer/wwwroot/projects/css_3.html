@@ -1,0 +1,152 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../projects/projectStyle.css">
+	</head>
+<body>
+<!--<img src="../projects/images/html_2_1" alt="">-->
+<section class="project-container">
+	<div class="project-container__logo">
+		<img src="../projects/images/CSS-Logo.png" alt="Logo" srcset="" style="max-width: 200px">
+	</div>
+	
+	<p class="project-name">
+		Работа с границами
+	</p>
+	<div class="description-block">
+		<article class="description-block__text">
+			<div class="logos">
+				<!-- <img class="app" src="../projects/images/AppInventor-Logo.png" alt=""> -->
+			</div>
+			
+
+			<p>Контейнеры </p>
+			<p>Познакомимся с двумя новыми тегами:</p>
+			<p>
+				<span class="code_line">
+					&lt;<span class="tag">div</span>&gt; &lt;/<span class="tag">div</span>&gt;
+				</span> - блочный контейнер
+			</p>
+			<p><span class="code_line">&lt;<span class="tag">span</span>&gt; &lt;/<span
+						class="tag">span</span>&gt;</span> - строчный контейнер </p>
+
+			<p>Эти два тега являются контейнерами, т.е при добавлении их в html страницу, никакого визуального эффекта
+				они не дадут, но зато в них можно вставлять другие теги или текст. Также эти два тега очень удобно
+				стилизовать.</p>
+
+			<p>Тег <span class="code_line">&lt;<span class="tag">div</span>&gt;</span> является блочным контейнером и
+				внутрь него можно добавлять любые другие теги. </p>
+			<p>Тег <span class="code_line">&lt;<span class="tag">span</span>&gt;</span> является строчным контейнером и
+				в него можно вставить только текст, который нужно будет стилизовать особенным образом.</p>
+			<p>Далее для выполнения практических задач, вам нужно будет применять тег <span class="code_line">&lt;<span
+						class="tag">div</span>&gt;</span> </p>
+			<p>Работа с границами CSS </p>
+
+			<div class="code_container">
+				<ol class="list_nontype plain">
+					<li><span class="styles italic">border-width</span>: <span class="styles">размер</span>; <span
+							class="comment"> //свойство позволяющее задать толщину нашей границы</span></li>
+					<li><span class="styles italic">border-color</span>: <span class="styles">цвет</span>; <span
+							class="comment"> //свойство задающее цвет нашей границы </span></li>
+					<li><span class="styles italic">border-style</span>: <span class="styles">solid</span>; <span
+							class="comment"> //сплошная граница </span></li>
+					<li><span class="styles italic">border-style</span>: <span class="styles">dotted</span>; <span
+							class="comment"> //граница в виде точек</span> </li>
+					<li><span class="styles italic">border-style</span>: <span class="styles">dashed</span>; <span
+							class="comment"> //граница в виде пунктиров </span></li>
+					<li><span class="styles italic">border-style</span>: <span class="styles">double</span>; <span
+							class="comment"> //двойная граница </span></li>
+					<li><span class="styles italic">border-style</span>: <span class="styles">none</span>; <span
+							class="comment">//отсутствие границ</span></li>
+
+				</ol>
+			</div>
+			<p>Сокращенное свойство для границ <span class="code_line"><span class="styles italic">border</span>: <span
+						class="styles">толщина стиль цвет</span></span></p>
+
+			<div class="code_container">
+				<ol class="list_nontype">
+					<li><span class="styles italic">border</span>: <span class="styles">1px solid black</span>;</li>
+				</ol>
+			</div>
+
+			<p>Границы для отдельных сторон </p>
+
+			<div class="code_container">
+				<ol class="list_nontype plain">
+					<li><span class="styles italic">border-left</span><span class="comment"> //граница будет только
+							слева</span></li>
+					<li><span class="styles italic">border-right</span><span class="comment"> //граница будет только
+							справа</span></li>
+					<li><span class="styles italic">border-top</span><span class="comment"> //граница будет
+							сверху</span></li>
+					<li><span class="styles italic">border-bottom</span><span class="comment"> //граница будет
+							снизу</span></li>
+				</ol>
+			</div>
+
+			<div class="code_container">
+
+				<ol class="list_nontype plain">
+					<li><span class="styles italic">border-top</span>: <span class="styles">1px dotted blue</span>;</li>
+				</ol>
+			</div>
+
+
+
+			<p>Скругление углов границы </p>
+
+			<div class="code_container">
+				<ol class="list_nontype">
+					<li><span class="styles italic">border-radius</span>: <span class="styles">10px</span>;</li>
+				</ol>
+			</div>
+
+			<p>lt – левый верхний угол</p>
+			<p>rt – правый верхний угол</p>
+			<p>rb – правый нижний угол</p>
+			<p>lb - левый нижний угол</p>
+
+			<div class="code_container">
+				<ol class="list_nontype plain">
+					<li><span class="styles italic">border-radius</span>: <span class="styles">10px 20px 30px
+							40px</span>;<span class="comment"> //ltpx rtpx rbpx rlpx</span></li>
+					<li><span class="styles italic">border-radius</span>: <span class="styles"> 20px 30px</span>;<span
+							class="comment"> //ltrbpx rtlbpx</span></li>
+					<li><span class="styles italic">border-radius</span>: <span class="styles">30px 20px
+							10px</span>;<span class="comment"> //ltpx rtlbpx rbpx</span></li>
+				</ol>
+			</div>
+
+
+			<p>Для того чтобы сделать круг </p>
+			<div class="code_container">
+				<ol class="list_nontype">
+					<li><span class="styles italic">border-radius</span>: <span class="styles">100%</span><span
+							class="comment"> //с учетом того что наш блок является квадратом</span></li>
+				</ol>
+			</div>
+
+			<p class="accent">Задание 1</p>
+			<p>Повторите по заданному образцу</p>
+			<img src="../projects/images/css_3_1.png" alt="">
+			<p class="accent">Задание 2</p>
+			<p>Повторите по заданному образцу</p>
+			<img src="../projects/images/css_3_2.png" alt="">
+			<p class="accent">Задание 3</p>
+			<p>Повторите по заданному образцу</p>
+			<img src="../projects/images/css_3_3.png" alt="">
+			<p class="accent">Задание 4</p>
+			<p>Повторите по заданному образцу</p>
+			<img src="../projects/images/css_3_4.png" alt="">
+			<p class="accent">Задание 5</p>
+			<p>Повторите по заданному образцу</p>
+			<img src="../projects/images/css_3_5.png" alt="">
+			<p class="accent">Задание 6</p>
+			<p>Повторите по заданному образцу</p>
+			<img src="../projects/images/css_3_6.png" alt="">
+			<p class="accent">Задание 7</p>
+			<p>Повторите по заданному образцу</p>
+			<img src="../projects/images/css_3_7.png" alt="">
+		</article>
+	</div>
+</section></body></html>

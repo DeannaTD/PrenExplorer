@@ -1,0 +1,97 @@
+<!-- <link rel="stylesheet" href="../css/lesson.css"> -->
+<section class="project-container new-project">
+	<div class="project-container__logo">
+		<img src="../projects/img/logos/html-logo.png" alt="Logo" class="project-logo">
+		<!-- <img src="../img/logos/html-logo.png" alt="Logo" class="project-logo"> -->
+	</div>
+	
+	<p class="project-name">
+		Работа с картинками
+	</p>
+	<div class="description-block">
+		<article class="description-block__text">
+			<p>
+				Давайте теперь разберемся с тем, как разместить изображение на странице вашего сайта. Для этого
+				предназначен тег <span class="code-inline">&lt;<span class="tag-name">img</span>&gt;</span>, имеющий обязательный атрибут <span class="code-inline"><span class="attribute-name">src</span></span>, в котором следует задавать путь к файлу
+				картинки. При этом сам тег не требует закрывающего тега.
+			</p>
+
+			<p>В тегах также могут размещаться атрибуты - специальные команды, которые расширяют действие тега.</p>
+			<p>Атрибуты размещаются внутри открывающего тега в таком формате:</p>
+			<p>
+				<span class="code-inline">&lt;<span class="tag-name">тег</span> <span class="attribute-name">атрибут1</span>=<span class="attribute-value">"значение"</span> <span class="attribute-name">атрибут2</span>=<span class="attribute-value">"значение"</span>&gt;</span>
+			</p>
+			<p>Кавычки могут быть любыми - одинарными или двойными, допустимо их вообще их не ставить, если значение
+				атрибута состоит из одного слова (но это не желательно).</p>
+			<p>Атрибуты которые доступны для тега <span class="code-inline">&lt;<span class="tag-name">img</span>&gt;</span>:</p>
+			<ul>
+				<li>
+					<p><span class="code-inline"><span class="attribute-name">src</span></span> - атрибут src задает путь к изображению</p>
+					<p>Синтаксис <span class="code-inline"><span class="attribute-name">src</span>=<span class="attribute-value">"путь к картинке"</span></span></p>
+				</li>
+				<li>
+					<p><span class="code-inline"><span class="attribute-name">alt</span></span> - атрибут показывает альтернативный текст, если картинка по каким-то причинам не прогрузилась
+					</p>
+					<p>Синтаксис <span class="code-inline"><span class="attribute-name">alt</span>=<span class="attribute-value">"текст, который покажется вместо картинки"</span></span></p>
+				</li>
+				<li>
+					<p><span class="code-inline"><span class="attribute-name">width</span></span> - атрибут позволяет изменять ширину картинки</p>
+					<p>Синтаксис <span class="code-inline"><span class="attribute-name">width</span>=<span class="attribute-value">"100px"</span></span></p>
+				</li>
+				<li>
+					<p><span class="code-inline"><span class="attribute-name">height</span></span> - атрибут позволяет изменять высоту картинки</p>
+				</li>
+			</ul>
+
+			<p>Давайте посмотрим на примере. Пусть в папке нашего сайта находится файл smile.png с картинкой. Давайте
+				выведем ее на странице нашего сайта:</p>
+			<img src="../projects/img/html/html_5_1.png" alt="">
+			<p>Теперь попробуем задать для нашей картинки ширину, высота картинки одновременно подстроится под ширину
+			</p>
+			<img src="../projects/img/html/html_5_3.png" alt="">
+			<p>Результат выполнения кода </p>
+			<img src="../projects/img/html/html_5_4.png" alt="">
+			<p>А теперь попробуем одновременно задать высоту и ширину при этом значения будут разными </p>
+			<img src="../projects/img/html/html_5_5.png" alt="">
+			<p>Результат выполнения кода , как видите картинка исказилась, что избежать этого можем задать одинаковые
+				значения для высоты и ширины </p>
+			<img src="../projects/img/html/html_5_6.png" alt="">
+
+			<p class="theme-2">Подпись под картинкой</p>
+			<p>Что такое подпись под картинкой и как же она выгладит?</p>
+			<p>Это обычная картинка, под которой внизу размещается краткий текст с описанием:</p>
+			<img src="../projects/img/html/html_5_7.png" alt="">
+			<p>Чтобы создать такую подпись под картинкой, в HTML5 придумали специальные парные теги:</p>
+			<ul>
+				<li>тег <span class="code-inline">&lt;<span class="tag-name">figure</span>&gt;</span> создан для группировки HTML изображений и подписей под ними;</li>
+				<li>тег <span class="code-inline">&lt;<span class="tag-name">figcaption</span>&gt;</span> создан для подписи под изображением</li>
+			</ul>
+			<p>Синтаксис: </p>
+			<div class='code_container'>
+				<ol class='code_list'>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+				<ol class='list_nontype'>
+					<li>&lt;<span class='tag'>figure</span>&gt; </li>
+					<li> &lt;<span class='tag'>img</span> <span class="attribute-name">src</span>=<span class="attribute-value">"путь к картинке"</span>&gt;</li>
+					<li>&lt;<span class='tag'>figcaption</span>&gt;Закат&lt;<span class='tag'></span>/<span class='tag'>figcaption</span>&gt;</li>
+					<li>&lt;<span class='tag'></span>/<span class='tag'>figure</span>&gt;</li>
+				</ol>
+			</div>
+			<p>Пример: </p>
+			<img src="../projects/img/html/html_5_9.png" alt="">
+			<p>Результат </p>
+			<img src="../projects/img/html/html_5_10.png" alt="">
+
+			<p class="task"><span class="danger-underlined">Задание 1:</span> Разместите на странице вашего сайта какую-нибудь картинку</p>
+			<p><span class="danger-underlined">Задание 2:</span> Установите вашей картинке ширину в 300 пикселей</p>
+			<p><span class="danger-underlined">Задание 3:</span> Установите вашей картинке высоту в 100 пикселей</p>
+			<p><span class="danger-underlined">Задание 4:</span> Установите вашей картинке ширину и высоту так, чтобы пропорции изображения исказились</p>
+			<p><span class="danger-underlined">Задание 5:</span> Установите вашей картинке ширину и высоту так, чтобы пропорции изображения НЕ исказились</p>
+			<p><span class="danger-underlined">Задание 6:</span> Добавьте описание к вашей картинке</p>
+		</article>
+	</div>
+</section>

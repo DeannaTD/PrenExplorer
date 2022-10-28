@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+<p>@User.Identity.Name</p>
+<a asp-action="AllAtendanceTest" asp-controller="Attendance">Посещения тест</a>
+<a asp-action="GetDuplicatedUsers" asp-controller="Account">Дубликаты</a>
+
+<form method="post" asp-controller="Account" asp-action="Logout">
+    <input type="submit" value="Выход" />
+</form>
+
+<a asp-action="Settings" asp-controller="Account">Настройки</a>
+}
+
+<a asp-action="DeleteAttendances"></a>
+<a asp-action="CreateLevel" asp-controller="Project">Создать уровень</a>
+
+<a asp-action="Register" asp-controller="Account">Регистрация</a>
+<a asp-action="Login" asp-controller="Account">Войти</a>
+<a asp-action="InitializeRoles" asp-controller="Account">Добавить роли</a>
+<a asp-action="CreateHelpers" asp-controller="Home">Добавить статусы</a>
+<a asp-action="Create" asp-controller="Branch">Добавить филиал</a>
+<a asp-action="Index" asp-controller="Branch">Вывести все филиалы</a>
+<br />
+<a asp-action="Index" asp-controller="Payment">Оплата</a>
+<br />
+<br />
+<br />
+<a asp-action="AttendanceMenu" asp-controller="Mentor">Учитель Посещения</a>
+<br />
+<a asp-action="StudentsMenu" asp-controller="Mentor">Учитель Урок</a>
+
+<br />
+<br />
+<a asp-action="UserInfo" asp-controller="Account">Инфо</a>
+<a asp-action="DeleteUser" asp-controller="Account">Удалить</a>
+<a asp-action="ResetPasswordDebug" asp-controller="Account">Удалить</a>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+

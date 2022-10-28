@@ -1,0 +1,81 @@
+<section class="project-container">
+    <div class="project-container__logo">
+        <img src="" alt="Logo" srcset="">
+    </div>
+    
+    <p class="project-name">Урок 20. Работа с функциями</p>
+    <div class="description-block">
+	    <article class="description-block__text">
+               <p><b>Функции тоже являются объектами</b></p>
+               <p>Функции — это объекты, поэтому их можно присваивать переменным.</p>
+               <p>def dummy_text_adder(text):</p>
+               <p>&emsp;    return 'Ө-' + text + '-Ө'</p>
+               <p></p>
+               <p>formatter = dummy_text_adder</p>
+               <p></p>
+               <p>result = formatter('pyhton')</p>
+               <p>print(result)</p>
+               <p></p>
+               <p>Ө-pyhton-Ө</p>
+               <p><b>Вложенные функции</b></p>
+               <p>Функции могут возвращать функции, которые были созданы внутри них. При вызове внешней функции и присвоении ее значения переменной, наша переменная превращается в функцию, которая уже возвращает конечное значение.</p>
+               <p>def outer(num):</p>
+               <p>&emsp;    square = num ** 2</p>
+               <p>&emsp;    def inner(other_num):</p>
+               <p>&emsp;&emsp;        return square + other_num</p>
+               <p>&emsp;    return inner</p>
+               <p></p>
+               <p>out_result = outer(2)</p>
+               <p>inn_result = out_result(22)</p>
+               <p>print(inn_result)</p>
+               <p>Для простоты восприятия, вернемся к нашей аналогии -- мясорубке. Наша внешняя функция outer -- это большая мясорубка, которая берет “мясо” под названием num, и возвращает маленькую мясорубку.</p>
+               <p>Наша маленькая мясорубка была присвоена переменной out_result, в момент, когда мы вызвали мясорубку outer() с числом 2. Мы вызвали маленькую мясорубку out_result() и присвоили то, что она возвратила переменной inn_result, и вывели на экран содержимое.</p>
+               <p><b>Область видимости переменных в функциях</b></p>
+               <p>Те переменные, которые были созданы внутри функции, не доступны извне:</p>
+               <p>this_var_is_visible = 'can be seen inside and outside function'</p>
+               <p></p>
+               <p>def var_visibility():</p>
+               <p>&emsp;    this_is_not_visible = 'cannot be seen outside function'</p>
+               <p>&emsp;    return</p>
+               <p></p>
+               <p>print(this_var_is_visible)</p>
+               <p>print(this_is_not_visible)</p>
+               <p></p>
+               <p>can be seen inside and outside function</p>
+               <p>Traceback (most recent call last):</p>
+               <p>  File "/home/murat/itacademy/test.py", line 8, in <module></p>
+               <p>    print(this_is_not_visible)</p>
+               <p>NameError: name 'this_is_not_visible' is not defined</p>
+               <p></p>
+               <p>Переменная this_is_not_visible доступна только внутри функции.</p>
+               <p><b>Напишем свой модуль</b></p>
+               <p>Создаём пустой файл supermodule.py</p>
+               <p>Напишем в нем две функции:</p>
+               <p>def hi(name):</p>
+               <p>&emsp;    return 'Hi, ' + name</p>
+               <p></p>
+               <p>def summ(a,b):</p>
+               <p>&emsp;    return a + b</p>
+               <p>Создадим в той же папке другой файл. Назовем main.py</p>
+               <p>Напишем следующий код:</p>
+               <p>import supermodule</p>
+               <p></p>
+               <p>hi = supermodule.hi('Murat')</p>
+               <p>print(hi)</p>
+               <p></p>
+               <p>sum_of_two = supermodule.summ(4,2)</p>
+               <p>print(sum_of_two)</p>
+               <p>После запуска этого кода, мы можем увидеть, что в main.py мы использовали код, который был написан в файле supermodule.py</p>
+               <p>Супер! Мы только что создали свой модуль! И успешно его использовали!!!</p>
+               <p></p>
+               <p><b>Задания:</b></p>
+               <p>1. Напишите функцию, которая принимает два аргумента (числа), умножает их друг на друга, и возвращает функцию, которая также берет два аргумента (числа), и возвращает результат умножения аргументов внешней функции плюс результат деления аргументов внутренней функции. Подсказка: (outer_arg1 * outer_arg2) + (inner_arg1 / inner_arg2)</p>
+               <p>2. Создайте модуль my_module, в котором будет функция, принимающая два аргумента, у которых значения по умолчанию должны быть 42 и 12. Функция должна возвращать результат их умножения друг на друга. Импортируйте функцию в файл main.py, вызовите функцию как без аргументов, так и с аргументами.</p>
+               <p>3. Создайте модуль palindrome. В нем напишите функцию check(), которая получает строковое значение и проверяет, является ли оно “полиндромом”. Полиндром -- это слово, которое читается одинаково как в обычном порядке, так и в обратном. Например: радар, око, Ололо.</p>
+               <p>Требования: функция не должна быть чувствительна к регистру.</p>
+          </article>
+        <div class="description-block__image">
+            <img src="" alt="" srcset="">
+        </div>
+    </div>
+</section>
