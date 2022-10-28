@@ -338,3 +338,9 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+#c_files
+.json
+/PrenExplorer/Models/*.cs
+/PrenExplorer/Migrations/*.cs
+/PrenExplorer/Data/*.cs
