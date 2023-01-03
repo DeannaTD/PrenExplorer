@@ -344,3 +344,4 @@ healthchecksdb
 /PrenExplorer/Models/*.cs
 /PrenExplorer/Migrations/*.cs
 /PrenExplorer/Data/*.cs
+"appsettings.json" 
