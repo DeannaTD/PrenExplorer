@@ -1,0 +1,14 @@
+﻿@model List<Level>
+
+<ul>
+@foreach(var level in Model)
+{
+    <li class="bold">@level.Name</li>
+    <ol class="wide-list">
+    @foreach(var project in level.Projects)
+    {
+        <li>@project.Name</li>
+    }
+    </ol>
+}
+</ul>

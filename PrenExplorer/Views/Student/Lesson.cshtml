@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+<div class="lesson_container">
+    <div id="lesson_detail" data-project="@ViewBag.ProjectLink"></div>
+</div>
+
+<script>
+    $(document).ready(() => {
+        let path = $('#lesson_detail').attr("data-project");
+        $("#lesson_detail").load(path);
+    });
+</script>
