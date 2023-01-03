@@ -340,9 +340,9 @@ ASALocalRun/
 healthchecksdb
 
 #c_files
-.json
+*.json
 /PrenExplorer/Models/*.cs
 /PrenExplorer/Migrations/*.cs
 /PrenExplorer/Data/*.cs
-appsettings.json
+/PrenExplorer/appsettings.json
 appsettings.json 
